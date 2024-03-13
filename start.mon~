@@ -1,0 +1,15 @@
+reset
+wrap -p 0 -s 0 -w 9 -t 0
+load --file=~/pico/audiopwm/debug/audiopwm.hex
+gpio --pio=0 --gpio=0 --init
+side -p 0 -s 0 -c 1 -b 0 --opt
+fifo -p 0 -s 0 --tx --join
+fifo -p 0 -s 0 --tx --shift-right
+
+sm -p 0 -s 0 -e true
+registers -p 0 -s0 -a 8
+
+fifo --enqueue --tx 0x0000ff00
+fifo --enqueue --tx 0x0000ff00
+fifo --enqueue --tx 0x000000ff
+fifo --enqueue --tx 0x0000ff00

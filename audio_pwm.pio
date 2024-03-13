@@ -1,0 +1,45 @@
+.program audio_pwm
+.side_set 1 opt
+; Format:
+; MSB                          LSB
+; 0000000000000000LLLLLLLLHHHHHHHH
+; where h is the number of high cycles and low is (!h + 1) which is the number of low cycles
+; OSR level
+; cycle length = 7 + 255
+; run at 62,5 MHz
+
+; 262 clocks/cycle frequency  238,549 / 16 = 14909 (or if it is 14: 17039)
+restart:
+.wrap_target
+  out pins, 1
+loops:
+  mov x, isr        side 1
+loop1:
+  jmp x-- loop1
+  mov x, y          side 0
+loop0:
+  jmp x-- loop0
+  jmp !osre restart
+public entry_point:
+  pull
+  out isr, 8
+  out y, 8
+.wrap
+
+
+% c-sdk {
+static inline void audio_pwm_program_init(PIO pio, uint sm, uint offset, uint pin) {
+ pio_gpio_init(pio, pin);
+ pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, true);
+
+ pio_sm_config c = audio_pwm_program_get_default_config(offset);
+ sm_config_set_sideset_pins(&c, pin);
+ sm_config_set_out_shift(&c, true, false, 32);
+ // sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
+
+ sm_config_set_clkdiv(&c, 2);
+
+ pio_sm_init(pio, sm, offset + 6, &c);
+ pio_sm_set_enabled(pio, sm, true);}
+%}
+
