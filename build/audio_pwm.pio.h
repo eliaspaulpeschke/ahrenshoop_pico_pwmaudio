@@ -26,8 +26,8 @@ static const uint16_t audio_pwm_program_instructions[] = {
     0x0044, //  4: jmp    x--, 4                     
     0x00e0, //  5: jmp    !osre, 0                   
     0x80a0, //  6: pull   block                      
-    0x60c8, //  7: out    isr, 8                     
-    0x6048, //  8: out    y, 8                       
+    0x60ca, //  7: out    isr, 10                    
+    0x604a, //  8: out    y, 10                      
             //     .wrap
 };
 
@@ -52,7 +52,7 @@ static inline void audio_pwm_program_init(PIO pio, uint sm, uint offset, uint pi
  sm_config_set_sideset_pins(&c, pin);
  sm_config_set_out_shift(&c, true, false, 32);
  sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
- sm_config_set_clkdiv(&c, 2);
+ //sm_config_set_clkdiv(&c, 2);
  pio_sm_init(pio, sm, offset + 6, &c);
  pio_sm_set_enabled(pio, sm, true);}
 

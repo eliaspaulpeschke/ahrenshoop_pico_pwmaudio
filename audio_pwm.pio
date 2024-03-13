@@ -22,8 +22,8 @@ loop0:
   jmp !osre restart
 public entry_point:
   pull
-  out isr, 8
-  out y, 8
+  out isr, 10
+  out y, 10
 .wrap
 
 
@@ -37,7 +37,7 @@ static inline void audio_pwm_program_init(PIO pio, uint sm, uint offset, uint pi
  sm_config_set_out_shift(&c, true, false, 32);
  sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
 
- sm_config_set_clkdiv(&c, 2);
+ //sm_config_set_clkdiv(&c, 2);
 
  pio_sm_init(pio, sm, offset + 6, &c);
  pio_sm_set_enabled(pio, sm, true);}
