@@ -78,7 +78,8 @@ CMakeFiles/audiopwm.dir/audiopwm.c.obj: /home/unheil/pico/audiopwm/audiopwm.c \
   /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h \
   /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pio.h \
   /home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
-  audio_pwm.pio.h
+  audio_pwm.pio.h \
+  /usr/include/newlib/math.h
 
 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj: /home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c \
   /home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb_option.h \
@@ -3047,8 +3048,6 @@ CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/
 
 /home/unheil/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c:
 
-/usr/include/newlib/math.h:
-
 /home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c:
 
 /home/unheil/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c:
@@ -3142,6 +3141,8 @@ CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/
 /usr/include/newlib/stdlib.h:
 
 /home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c:
+
+/home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h:
 
 /home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_math.c:
 
@@ -3397,6 +3398,8 @@ audio_pwm.pio.h:
 
 /home/unheil/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c:
 
+/usr/include/newlib/math.h:
+
 /home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/tusb_config.h:
 
 /home/unheil/pico/pico-sdk/src/common/pico_sync/include/pico/sem.h:
@@ -3428,8 +3431,6 @@ audio_pwm.pio.h:
 /home/unheil/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c:
 
 /home/unheil/pico/pico-sdk/lib/tinyusb/src/osal/osal.h:
-
-/home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h:
 
 /home/unheil/pico/pico-sdk/src/common/pico_sync/include/pico/lock_core.h:
 

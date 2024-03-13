@@ -51,7 +51,7 @@ static inline void audio_pwm_program_init(PIO pio, uint sm, uint offset, uint pi
  pio_sm_config c = audio_pwm_program_get_default_config(offset);
  sm_config_set_sideset_pins(&c, pin);
  sm_config_set_out_shift(&c, true, false, 32);
- // sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
+ sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
  sm_config_set_clkdiv(&c, 2);
  pio_sm_init(pio, sm, offset + 6, &c);
  pio_sm_set_enabled(pio, sm, true);}
