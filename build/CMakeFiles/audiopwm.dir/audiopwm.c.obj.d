@@ -65,4 +65,5 @@ CMakeFiles/audiopwm.dir/audiopwm.c.obj: \
  /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h \
  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pio.h \
  /home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
- /home/unheil/pico/audiopwm/build/audio_pwm.pio.h
+ /home/unheil/pico/audiopwm/build/audio_pwm.pio.h \
+ /home/unheil/pico/audiopwm/notes.h

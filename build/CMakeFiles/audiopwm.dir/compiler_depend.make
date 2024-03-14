@@ -133,7 +133,8 @@ CMakeFiles/audiopwm.dir/audiopwm.c.obj: /home/unheil/pico/audiopwm/audiopwm.c \
   /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h \
   /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pio.h \
   /home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
-  audio_pwm.pio.h
+  audio_pwm.pio.h \
+  /home/unheil/pico/audiopwm/notes.h
 
 CMakeFiles/audiopwm.dir/filter.c.obj: /home/unheil/pico/audiopwm/filter.c \
   /home/unheil/pico/audiopwm/filter.h \
@@ -3260,6 +3261,10 @@ CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/
 
 /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/usb.h:
 
+/home/unheil/pico/pico-sdk/src/common/pico_util/include/pico/util/datetime.h:
+
+/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.h:
+
 /usr/include/newlib/machine/stdlib.h:
 
 /usr/include/newlib/sys/_stdint.h:
@@ -3580,15 +3585,13 @@ audio_pwm.pio.h:
 
 /home/unheil/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c:
 
-/home/unheil/pico/pico-sdk/src/common/pico_util/include/pico/util/datetime.h:
-
-/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.h:
-
 /home/unheil/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c:
 
 /home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c:
 
 /usr/include/newlib/sys/cdefs.h:
+
+/home/unheil/pico/audiopwm/notes.h:
 
 /home/unheil/pico/pico-sdk/lib/tinyusb/src/device/dcd.h:
 

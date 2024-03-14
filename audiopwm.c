@@ -7,14 +7,12 @@
 #include "hardware/irq.h"
 #include "audio_pwm.pio.h"
 #include "math.h"
-
-
+#include "notes.h"
 
 #define AUDIO_PIN 0
 #define AUDIO_BUFFER_LEN 256
 #define AUDIO_BUFFER_NUM 3
-#define BUFFER_LEN 2048
-static float sine_buffer[BUFFER_LEN];
+
 int dma_chan;
 PIO pio;
 uint sm;
@@ -108,6 +106,44 @@ void init_dma(){
     irq_set_enabled(DMA_IRQ_0, true);
 }
 
+#define OSC_BUFFER_LEN 2048
+#define OSC_POS_MAX (0x10000 * OSC_BUFFER_LEN)
+#define OSC_NUM 16
+
+struct oscillator {
+    float (*buffer)[OSC_BUFFER_LEN];
+    uint pos;
+    uint step;
+    bool is_on;
+};
+
+static float sine_buffer[OSC_BUFFER_LEN];
+static float saw_buffer[OSC_BUFFER_LEN];
+static struct oscillator oscillators[OSC_NUM]; 
+
+void init_oscillators(){
+  for(uint i = 0; i < OSC_BUFFER_LEN; i++){
+	    sine_buffer[i] = cosf(2.0f * M_PI * ((float) i / OSC_BUFFER_LEN));
+	    saw_buffer[i] = -1.0f + 2.0f *((float) i / OSC_BUFFER_LEN);
+    }
+  for(int i = 0; i < OSC_NUM; i++){
+    oscillators[i].is_on = false;
+  }
+}
+
+void start_oscillator(uint num, float (*buffer)[OSC_BUFFER_LEN], uint step){
+  if (num < OSC_NUM){
+    oscillators[num].buffer = buffer;
+    oscillators[num].step = step;
+    oscillators[num].is_on = true;
+  }
+}
+
+float oscillate(uint num){
+  oscillators[num].pos += oscillators[num].step;
+  if (oscillators[num].pos >= OSC_POS_MAX) oscillators[num].pos -= OSC_POS_MAX;
+  return (*oscillators[num].buffer)[oscillators[num].pos >> 16u];
+}
 
 
 int main()
@@ -117,68 +153,78 @@ int main()
     init_pio();
     init_audio_buffers();
     init_dma(); 
-  
-    for(uint i = 0; i < BUFFER_LEN; i++){
-	    //sine_buffer[i] = cosf(2.0f * M_PI * ((float) i / BUFFER_LEN));
-	    sine_buffer[i] = -1.0f + 2.0f *((float) i / BUFFER_LEN);
-    }
-    uint step = 5177344;
-    uint pos = 0x80000;
-    uint pos2 = 0;
-    uint pos3 = 0xF0000;
-    uint pos_max = 0x10000 * BUFFER_LEN;
-    uint step2 = 3473408 ;
-    uint step3 = 4390912;
-    bool stepdir = false;
+    init_oscillators();
+    
+    //start_oscillator(0, &sine_buffer, 5177344);
+    //start_oscillator(1, &saw_buffer, 3473408);
+    //start_oscillator(2, &saw_buffer, 4390912);
+    
     float vol = 0.4;
-    uint volctr = 0;
-    struct adsr envelope;
+    
+    /*struct adsr envelope;
     construct_adsr(&envelope, 0.001f,0.2f,0.8f,0.6f,0.5f);
     struct adsr envelope1;
     construct_adsr(&envelope1, 0.001f,0.2f,0.8f,0.6f,0.7f);
     struct adsr envelope2;
     construct_adsr(&envelope2, 0.6f,0.6f,0.1f,0.05f,0.3f);
+*/
 
+    struct adsr envs[12];
+    for (int i = 0; i < 12; i++){
+      construct_adsr(&envs[i], 0.001f,0.02f,0.4f,0.6f,0.7f);
+      start_oscillator(i, &saw_buffer, notes[i]);
+    }
 
+    struct adsr filter_env;
+    construct_adsr(&filter_env, 0.02f, 0.3f, 0.6f, 0.3f, 0.7f);
     struct filter fil;
-    set_filter(&fil, 1000.0f, 0.2f, true);
-
-
+    set_filter(&fil, 600.0f, 0.8f, true);
+    
+    char chars[] = {'a', 'w', 's', 'e', 'd', 'f','t', 'g', 'z', 'h', 'u', 'j', 'k'};
+    uint mul = 0;
     dma_handler();
     while(1){
-    if (!envelope1.active) envelope1.active = true;  // if(envelope.active) a = 1;
+/*    if (!envelope1.active) envelope1.active = true;  // if(envelope.active) a = 1;
     if (!envelope.active) envelope.active = true;
     if (!envelope2.active) envelope2.active = true;
-    //printf("pos: %f, val %f , phase %f, active %d \n", envelope.pos, envelope.value, envelope.phase, a);
+  */  //printf("pos: %f, val %f , phase %f, active %d \n", envelope.pos, envelope.value, envelope.phase, a);
 	  volatile struct audiobuffer *buf = get_empty_buffer();
 	  buf->status = used;
       int c = getchar_timeout_us(0);
-      if (c > 0){
-        if (c == '['){
-          step2 += 0x10000;
+      if (c > 0){ 
+        if (c == 'n') mul += 1;
+        if (c == 'b') mul -= 1;
+        if(mul > 3 || mul < 0) mul = 0;
+        for (int i = 0; i < 12; i++){
+          if( c =='b' || c== 'n'){
+            start_oscillator(i, &saw_buffer, notes[i + 12 * mul]);
+          }else{
+              if (c == chars[i]) {
+                restart_envelope(&envs[i]);
+                restart_envelope(&filter_env);
+                printf("%c, %f \n", c, vol);
+              }
+          }
         }
-        if (c ==']'){
-          step2 -= 0x10000;
-        }
-        printf("%d \r", step2);
+        if (c == '+') vol += 0.1;
+        if (c == '-') vol -= 0.1;
+        if(vol > 1.0f || vol < 0.0f) vol = 0.1f;
       }
 	  for (uint i = 0; i < AUDIO_BUFFER_LEN; i++){
       //tick_adsr(&envelope);
       //tick_adsr(&envelope1);
-      tick_adsr(&envelope2);
-      set_filter(&fil, 600.0f * envelope2.value, 0.6f, false);;
-
-	    float v =  filter_audio(&fil, vol * sine_buffer[pos2 >> 16u]);// + vol * envelope1.value  * sine_buffer[pos >> 16u]); //+ vol * sine_buffer[pos3 >> 16u];
-        buf->buffer[i] = to_audio(v);
-	    pos += step;
-	    pos2 += step2;
-        pos3 += step3;
-	    if (pos >= pos_max) pos -= pos_max;
-	    if (pos2 >= pos_max)pos2 -= pos_max;
-	    if (pos3 >= pos_max)pos3 -= pos_max;
-
+      //tick_adsr(&envelope2);
+      //set_filter(&fil, 600.0f * envelope2.value, 0.6f, false);;
+      tick_adsr(&filter_env);
+      set_filter(&fil, 500.0f * filter_env.value, 0.8f, false);
+	    float v = 0;//filter_audio(&fil, vol * oscillate(0));// + vol * envelope1.value  * sine_buffer[pos >> 16u]); //+ vol * sine_buffer[pos3 >> 16u];
+      for (int i = 0; i < 12; i++){
+         tick_adsr(&envs[i]);
+         v += vol * envs[i].value * oscillate(i);
       }
-	  buf->status = full;
+      buf->buffer[i] = to_audio(filter_audio(&fil, v));
+     }
+	   buf->status = full;
     }
     return 0;
 }
