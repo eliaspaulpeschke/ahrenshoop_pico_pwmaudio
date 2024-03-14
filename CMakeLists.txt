@@ -25,6 +25,28 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
+add_library(adsr INTERFACE)
+target_sources(adsr INTERFACE
+        ${CMAKE_CURRENT_LIST_DIR}/adsr.c
+        )
+target_include_directories(adsr INTERFACE
+        ${CMAKE_CURRENT_LIST_DIR}
+        )
+target_link_libraries(adsr INTERFACE
+        pico_stdlib
+        )
+
+add_library(filter INTERFACE)
+target_sources(filter INTERFACE
+        ${CMAKE_CURRENT_LIST_DIR}/filter.c
+        )
+target_include_directories(filter INTERFACE
+        ${CMAKE_CURRENT_LIST_DIR}
+        )
+target_link_libraries(filter INTERFACE
+        pico_stdlib
+        )
+
 add_executable(audiopwm audiopwm.c )
 pico_generate_pio_header(audiopwm ${CMAKE_CURRENT_LIST_DIR}/audio_pwm.pio)
 target_sources(audiopwm PRIVATE audiopwm.c)
@@ -38,7 +60,8 @@ pico_enable_stdio_usb(audiopwm 1)
 
 # Add the standard library to the build
 target_link_libraries(audiopwm
-        pico_stdlib)
+        pico_stdlib
+        adsr filter)
 
 # Add the standard include files to the build
 target_include_directories(audiopwm PRIVATE

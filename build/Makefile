@@ -220,6 +220,30 @@ cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build.make pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build
 .PHONY : cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast
 
+adsr.obj: adsr.c.obj
+.PHONY : adsr.obj
+
+# target to build an object file
+adsr.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/adsr.c.obj
+.PHONY : adsr.c.obj
+
+adsr.i: adsr.c.i
+.PHONY : adsr.i
+
+# target to preprocess a source file
+adsr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/adsr.c.i
+.PHONY : adsr.c.i
+
+adsr.s: adsr.c.s
+.PHONY : adsr.s
+
+# target to generate assembly for a file
+adsr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/adsr.c.s
+.PHONY : adsr.c.s
+
 audiopwm.obj: audiopwm.c.obj
 .PHONY : audiopwm.obj
 
@@ -243,6 +267,30 @@ audiopwm.s: audiopwm.c.s
 audiopwm.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/audiopwm.c.s
 .PHONY : audiopwm.c.s
+
+filter.obj: filter.c.obj
+.PHONY : filter.obj
+
+# target to build an object file
+filter.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/filter.c.obj
+.PHONY : filter.c.obj
+
+filter.i: filter.c.i
+.PHONY : filter.i
+
+# target to preprocess a source file
+filter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/filter.c.i
+.PHONY : filter.c.i
+
+filter.s: filter.c.s
+.PHONY : filter.s
+
+# target to generate assembly for a file
+filter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/filter.c.s
+.PHONY : filter.c.s
 
 home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj: home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 .PHONY : home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj
@@ -1788,9 +1836,15 @@ help:
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"
 	@echo "... audiopwm"
 	@echo "... bs2_default"
+	@echo "... adsr.obj"
+	@echo "... adsr.i"
+	@echo "... adsr.s"
 	@echo "... audiopwm.obj"
 	@echo "... audiopwm.i"
 	@echo "... audiopwm.s"
+	@echo "... filter.obj"
+	@echo "... filter.i"
+	@echo "... filter.s"
 	@echo "... home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj"
 	@echo "... home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
 	@echo "... home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"

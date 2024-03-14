@@ -58,7 +58,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
   "LIB_PICO_UTIL=1"
   "PICO_BOARD=\"pico\""
   "PICO_BUILD=1"
-  "PICO_CMAKE_BUILD_TYPE=\"Release\""
+  "PICO_CMAKE_BUILD_TYPE=\"Debug\""
   "PICO_COPY_TO_RAM=0"
   "PICO_CXX_ENABLE_EXCEPTIONS=0"
   "PICO_NO_FLASH=0"
@@ -128,7 +128,9 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/unheil/pico/audiopwm/adsr.c" "CMakeFiles/audiopwm.dir/adsr.c.obj" "gcc" "CMakeFiles/audiopwm.dir/adsr.c.obj.d"
   "/home/unheil/pico/audiopwm/audiopwm.c" "CMakeFiles/audiopwm.dir/audiopwm.c.obj" "gcc" "CMakeFiles/audiopwm.dir/audiopwm.c.obj.d"
+  "/home/unheil/pico/audiopwm/filter.c" "CMakeFiles/audiopwm.dir/filter.c.obj" "gcc" "CMakeFiles/audiopwm.dir/filter.c.obj.d"
   "/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj.d"
   "/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj.d"
   "/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj.d"

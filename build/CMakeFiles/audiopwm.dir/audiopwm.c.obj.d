@@ -16,6 +16,7 @@ CMakeFiles/audiopwm.dir/audiopwm.c.obj: \
  /usr/include/newlib/sys/timespec.h /usr/include/newlib/sys/_timespec.h \
  /usr/include/newlib/sys/_pthreadtypes.h /usr/include/newlib/sys/sched.h \
  /usr/include/newlib/machine/types.h /usr/include/newlib/sys/stdio.h \
+ /home/unheil/pico/audiopwm/adsr.h \
  /home/unheil/pico/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
  /home/unheil/pico/pico-sdk/src/common/pico_base/include/pico.h \
  /home/unheil/pico/pico-sdk/src/common/pico_base/include/pico/types.h \
@@ -56,6 +57,7 @@ CMakeFiles/audiopwm.dir/audiopwm.c.obj: \
  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
  /home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
  /home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
+ /home/unheil/pico/audiopwm/filter.h /usr/include/newlib/math.h \
  /home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
  /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h \
  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h \
@@ -63,5 +65,4 @@ CMakeFiles/audiopwm.dir/audiopwm.c.obj: \
  /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h \
  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pio.h \
  /home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
- /home/unheil/pico/audiopwm/build/audio_pwm.pio.h \
- /usr/include/newlib/math.h
+ /home/unheil/pico/audiopwm/build/audio_pwm.pio.h

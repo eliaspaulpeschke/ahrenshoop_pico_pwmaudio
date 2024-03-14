@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/audiopwm.dir/adsr.c.obj"
+  "CMakeFiles/audiopwm.dir/adsr.c.obj.d"
   "CMakeFiles/audiopwm.dir/audiopwm.c.obj"
   "CMakeFiles/audiopwm.dir/audiopwm.c.obj.d"
+  "CMakeFiles/audiopwm.dir/filter.c.obj"
+  "CMakeFiles/audiopwm.dir/filter.c.obj.d"
   "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj"
   "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj.d"
   "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj"

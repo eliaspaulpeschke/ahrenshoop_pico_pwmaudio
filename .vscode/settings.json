@@ -2,6 +2,11 @@
     "files.associations": {
         "stdio.h": "c",
         "gpio.h": "c",
-        "random": "c"
-    }
+        "adsr.h": "c",
+        "adsr.c": "c",
+        "random": "c",
+        "irq.h": "c",
+        "math.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }

@@ -40,13 +40,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 28,
+				"line" : 50,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 40,
+				"line" : 62,
 				"parent" : 0
 			},
 			{
@@ -67,7 +67,7 @@
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 29,
+				"line" : 51,
 				"parent" : 0
 			},
 			{
@@ -79,7 +79,7 @@
 			{
 				"command" : 7,
 				"file" : 0,
-				"line" : 55,
+				"line" : 78,
 				"parent" : 0
 			},
 			{
@@ -113,7 +113,7 @@
 			{
 				"command" : 9,
 				"file" : 0,
-				"line" : 33,
+				"line" : 55,
 				"parent" : 0
 			},
 			{
@@ -125,7 +125,7 @@
 			{
 				"command" : 10,
 				"file" : 0,
-				"line" : 34,
+				"line" : 56,
 				"parent" : 0
 			},
 			{
@@ -149,13 +149,13 @@
 			{
 				"command" : 11,
 				"file" : 0,
-				"line" : 44,
+				"line" : 67,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 50,
+				"line" : 73,
 				"parent" : 0
 			}
 		]
@@ -166,7 +166,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-mcpu=cortex-m0plus -mthumb -O3 -DNDEBUG"
+					"fragment" : "-mcpu=cortex-m0plus -mthumb -Og -g"
 				},
 				{
 					"backtrace" : 2,
@@ -320,7 +320,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"define" : "PICO_CMAKE_BUILD_TYPE=\"Release\""
+					"define" : "PICO_CMAKE_BUILD_TYPE=\"Debug\""
 				},
 				{
 					"backtrace" : 2,
@@ -640,14 +640,16 @@
 				68,
 				69,
 				70,
-				71
+				71,
+				72,
+				73
 			]
 		},
 		{
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-mcpu=cortex-m0plus -mthumb -O3 -DNDEBUG"
+					"fragment" : "-mcpu=cortex-m0plus -mthumb -Og -g"
 				},
 				{
 					"backtrace" : 2,
@@ -798,7 +800,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"define" : "PICO_CMAKE_BUILD_TYPE=\"Release\""
+					"define" : "PICO_CMAKE_BUILD_TYPE=\"Debug\""
 				},
 				{
 					"backtrace" : 2,
@@ -1068,7 +1070,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-mcpu=cortex-m0plus -mthumb -O3 -DNDEBUG"
+					"fragment" : "-mcpu=cortex-m0plus -mthumb -Og -g"
 				},
 				{
 					"backtrace" : 2,
@@ -1238,7 +1240,7 @@
 				},
 				{
 					"backtrace" : 2,
-					"define" : "PICO_CMAKE_BUILD_TYPE=\"Release\""
+					"define" : "PICO_CMAKE_BUILD_TYPE=\"Debug\""
 				},
 				{
 					"backtrace" : 2,
@@ -1524,7 +1526,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-mcpu=cortex-m0plus -mthumb -O3 -DNDEBUG",
+				"fragment" : "-mcpu=cortex-m0plus -mthumb -Og -g",
 				"role" : "flags"
 			},
 			{
@@ -2432,7 +2434,9 @@
 				68,
 				69,
 				70,
-				71
+				71,
+				72,
+				73
 			]
 		},
 		{
@@ -2873,6 +2877,18 @@
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
 			"path" : "/home/unheil/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "adsr.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "filter.c",
 			"sourceGroupIndex" : 0
 		},
 		{

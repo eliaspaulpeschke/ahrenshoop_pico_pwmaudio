@@ -1,10 +1,13 @@
 #include <stdio.h>
+#include <adsr.h>
+#include <filter.h>
 #include "pico/stdlib.h"
 #include "hardware/dma.h"
 #include "hardware/pio.h"
 #include "hardware/irq.h"
 #include "audio_pwm.pio.h"
 #include "math.h"
+
 
 
 #define AUDIO_PIN 0
@@ -116,7 +119,8 @@ int main()
     init_dma(); 
   
     for(uint i = 0; i < BUFFER_LEN; i++){
-	sine_buffer[i] = cosf(2.0f * M_PI * ((float) i / BUFFER_LEN));
+	    //sine_buffer[i] = cosf(2.0f * M_PI * ((float) i / BUFFER_LEN));
+	    sine_buffer[i] = -1.0f + 2.0f *((float) i / BUFFER_LEN);
     }
     uint step = 5177344;
     uint pos = 0x80000;
@@ -126,12 +130,26 @@ int main()
     uint step2 = 3473408 ;
     uint step3 = 4390912;
     bool stepdir = false;
-    float vol = 0.1;
+    float vol = 0.4;
     uint volctr = 0;
+    struct adsr envelope;
+    construct_adsr(&envelope, 0.001f,0.2f,0.8f,0.6f,0.5f);
+    struct adsr envelope1;
+    construct_adsr(&envelope1, 0.001f,0.2f,0.8f,0.6f,0.7f);
+    struct adsr envelope2;
+    construct_adsr(&envelope2, 0.6f,0.6f,0.1f,0.05f,0.3f);
+
+
+    struct filter fil;
+    set_filter(&fil, 1000.0f, 0.2f, true);
 
 
     dma_handler();
     while(1){
+    if (!envelope1.active) envelope1.active = true;  // if(envelope.active) a = 1;
+    if (!envelope.active) envelope.active = true;
+    if (!envelope2.active) envelope2.active = true;
+    //printf("pos: %f, val %f , phase %f, active %d \n", envelope.pos, envelope.value, envelope.phase, a);
 	  volatile struct audiobuffer *buf = get_empty_buffer();
 	  buf->status = used;
       int c = getchar_timeout_us(0);
@@ -145,7 +163,12 @@ int main()
         printf("%d \r", step2);
       }
 	  for (uint i = 0; i < AUDIO_BUFFER_LEN; i++){
-	    float v =  vol * sine_buffer[pos2 >> 16u] + vol * sine_buffer[pos >> 16u]+ vol * sine_buffer[pos3 >> 16u];
+      //tick_adsr(&envelope);
+      //tick_adsr(&envelope1);
+      tick_adsr(&envelope2);
+      set_filter(&fil, 600.0f * envelope2.value, 0.6f, false);;
+
+	    float v =  filter_audio(&fil, vol * sine_buffer[pos2 >> 16u]);// + vol * envelope1.value  * sine_buffer[pos >> 16u]); //+ vol * sine_buffer[pos3 >> 16u];
         buf->buffer[i] = to_audio(v);
 	    pos += step;
 	    pos2 += step2;
