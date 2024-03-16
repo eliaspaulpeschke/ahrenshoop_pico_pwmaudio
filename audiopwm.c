@@ -1,13 +1,15 @@
-#include <stdio.h>
 #include <adsr.h>
 #include <filter.h>
-#include "pico/stdlib.h"
-#include "hardware/dma.h"
-#include "hardware/pio.h"
-#include "hardware/irq.h"
+#include <stdio.h>
+
 #include "audio_pwm.pio.h"
+#include "hardware/adc.h"
+#include "hardware/dma.h"
+#include "hardware/irq.h"
+#include "hardware/pio.h"
 #include "math.h"
 #include "notes.h"
+#include "pico/stdlib.h"
 
 #define AUDIO_PIN 0
 #define AUDIO_BUFFER_LEN 256
@@ -17,67 +19,75 @@ int dma_chan;
 PIO pio;
 uint sm;
 uint offset;
-enum buffer_status {empty, used, full, playing};
+enum buffer_status {
+    empty,
+    used,
+    full,
+    playing
+};
+
+volatile static float adc_value;
+static float adc_baseline;
+static int adc_count;
 
 struct audiobuffer {
-   uint32_t buffer[AUDIO_BUFFER_LEN];
-   enum buffer_status status;
+    uint32_t buffer[AUDIO_BUFFER_LEN];
+    enum buffer_status status;
 };
 
 volatile static struct audiobuffer buffers[AUDIO_BUFFER_NUM];
-volatile static struct audiobuffer *playing_buffer;
-static struct audiobuffer silence; 
+volatile static struct audiobuffer* playing_buffer;
+static struct audiobuffer silence;
 
-volatile struct audiobuffer *get_empty_buffer(){
-	struct audiobuffer *buf;
-	uint8_t it = 0;
-	while (1){
-		if (buffers[it].status == empty){
-			return &buffers[it];
-		}
-		it++;
-		if (it >= AUDIO_BUFFER_NUM) it = 0;
-	}
+volatile struct audiobuffer* get_empty_buffer() {
+    struct audiobuffer* buf;
+    uint8_t it = 0;
+    while (1) {
+        if (buffers[it].status == empty) {
+            return &buffers[it];
+        }
+        it++;
+        if (it >= AUDIO_BUFFER_NUM)
+            it = 0;
+    }
 }
 
-volatile struct audiobuffer *get_playable_buffer(){
-	for(uint8_t i = 0; i < AUDIO_BUFFER_NUM; i++){
-	    if(buffers[i].status == full){
-		    return &buffers[i];
-	    }
-	}
-	silence.status = full;
-	return &silence;
+volatile struct audiobuffer* get_playable_buffer() {
+    for (uint8_t i = 0; i < AUDIO_BUFFER_NUM; i++) {
+        if (buffers[i].status == full) {
+            return &buffers[i];
+        }
+    }
+    silence.status = full;
+    return &silence;
 }
 
-void init_audio_buffers(){
-	for (uint i = 0; i < AUDIO_BUFFER_NUM; i++){
-		for (uint j = 0; j < AUDIO_BUFFER_LEN; j++){
-			buffers[i].buffer[j] = 0;
-		}
-		buffers[i].status = full;
-	}
-	for(uint i = 0; i < AUDIO_BUFFER_LEN; i++){
-		silence.buffer[i] = 0;
-	}
-
+void init_audio_buffers() {
+    for (uint i = 0; i < AUDIO_BUFFER_NUM; i++) {
+        for (uint j = 0; j < AUDIO_BUFFER_LEN; j++) {
+            buffers[i].buffer[j] = 0;
+        }
+        buffers[i].status = full;
+    }
+    for (uint i = 0; i < AUDIO_BUFFER_LEN; i++) {
+        silence.buffer[i] = 0;
+    }
 }
 
-uint32_t to_audio(float in){
-	uint32_t value = (uint32_t) (511.0 * (1.0 + in));
-	//printf("value %u, ~value %u \n", value, 1024 - value);
-	return (((1024 - value) << 10) | value);
+uint32_t to_audio(float in) {
+    uint32_t value = (uint32_t)(511.0 * (1.0 + in));
+    // printf("value %u, ~value %u \n", value, 1024 - value);
+    return (((1024 - value) << 10) | value);
 }
 
-
-void init_pio(){
+void init_pio() {
     pio = pio0;
     offset = pio_add_program(pio, &audio_pwm_program);
     sm = pio_claim_unused_sm(pio, true);
     audio_pwm_program_init(pio, sm, offset, AUDIO_PIN);
 }
 
-void dma_handler(){
+void dma_handler() {
     playing_buffer->status = empty;
     playing_buffer = get_playable_buffer();
     dma_hw->ints0 = 1u << dma_chan;
@@ -85,7 +95,7 @@ void dma_handler(){
     playing_buffer->status = playing;
 }
 
-void init_dma(){
+void init_dma() {
     dma_chan = dma_claim_unused_channel(true);
     dma_channel_config c = dma_channel_get_default_config(dma_chan);
     channel_config_set_transfer_data_size(&c, DMA_SIZE_32);
@@ -95,15 +105,68 @@ void init_dma(){
     dma_channel_configure(
         dma_chan,
         &c,
-        &pio0_hw->txf[0], // Write address (only need to set this once)
-        NULL,             // Don't provide a read address yet
-        AUDIO_BUFFER_LEN, // Write the same value many times, then halt and interrupt
-        false             // Don't start yet
+        &pio0_hw->txf[0],  // Write address (only need to set this once)
+        NULL,              // Don't provide a read address yet
+        AUDIO_BUFFER_LEN,  // Write the same value many times, then halt and interrupt
+        false              // Don't start yet
     );
 
     dma_channel_set_irq0_enabled(dma_chan, true);
     irq_set_exclusive_handler(DMA_IRQ_0, dma_handler);
     irq_set_enabled(DMA_IRQ_0, true);
+    // irq_set_priority(DMA_IRQ_0, 0x00);
+}
+#define DELTA_THRESH 0.02f
+void adc_handler() {
+    irq_clear(ADC_IRQ_FIFO);
+    static float a = 0.7f;
+    static float b = 0.3f;
+    if (!adc_fifo_is_empty()) {
+        uint16_t val = adc_fifo_get();
+        float in = ((((float)val) - 2048.0f) / 2048.0f) - adc_baseline;
+        adc_value = in;  //* b + adc_value * a;
+    }
+}
+
+void init_adc() {
+    adc_init();
+    adc_gpio_init(26);
+    adc_select_input(0);
+    adc_fifo_setup(true, false, 1, false, false);
+    adc_irq_set_enabled(true);
+    adc_set_clkdiv(786);  // 384, 192
+    irq_set_exclusive_handler(ADC_IRQ_FIFO, adc_handler);
+    irq_set_enabled(ADC_IRQ_FIFO, true);
+    adc_run(true);
+    adc_baseline = 0.0f;
+    float intermediate = 0.0f;
+    float delta_intermediate = 0.0f;
+    for (int i = 0; i < 10000; i++) {
+        sleep_us(500);
+        intermediate += adc_value;
+    }
+    adc_baseline = intermediate / 10000.0f;
+    adc_count = 0;
+}
+
+void count_detection() {
+    static int old_count;
+    static int same;
+    if (adc_value > 0.0f) {
+        adc_count += (int)(adc_value * 150.0f);
+    } else if (adc_value < 0.0f) {
+        adc_count += (int)(adc_value * 150.0f);
+    } else {
+        adc_count = 0;
+    }
+    if (adc_count == old_count) {
+        same++;
+        if (same > 7) {
+            adc_count = 0;
+        }
+    } else {
+        old_count = adc_count;
+    }
 }
 
 #define OSC_BUFFER_LEN 2048
@@ -114,117 +177,153 @@ struct oscillator {
     float (*buffer)[OSC_BUFFER_LEN];
     uint pos;
     uint step;
+    uint detune;
     bool is_on;
 };
 
 static float sine_buffer[OSC_BUFFER_LEN];
 static float saw_buffer[OSC_BUFFER_LEN];
-static struct oscillator oscillators[OSC_NUM]; 
+static struct oscillator oscillators[OSC_NUM];
 
-void init_oscillators(){
-  for(uint i = 0; i < OSC_BUFFER_LEN; i++){
-	    sine_buffer[i] = cosf(2.0f * M_PI * ((float) i / OSC_BUFFER_LEN));
-	    saw_buffer[i] = -1.0f + 2.0f *((float) i / OSC_BUFFER_LEN);
+#define ECHO_LEN 4096
+static float echobuffer[ECHO_LEN];
+static uint16_t echo_pos;
+static uint16_t echo_tap0;
+static uint16_t echo_tap1;
+static uint16_t echo_tap2;
+static uint16_t echo_tap3;
+
+void init_echo() {
+    for (int i = 0; i < ECHO_LEN; i++) {
+        echobuffer[i] = 0;
     }
-  for(int i = 0; i < OSC_NUM; i++){
-    oscillators[i].is_on = false;
-  }
+    echo_pos = 0;
+    echo_tap0 = 1;
+    echo_tap1 = 2048;
+    echo_tap2 = 3500;
+    echo_tap3 = 3900;
 }
 
-void start_oscillator(uint num, float (*buffer)[OSC_BUFFER_LEN], uint step){
-  if (num < OSC_NUM){
-    oscillators[num].buffer = buffer;
-    oscillators[num].step = step;
-    oscillators[num].is_on = true;
-  }
+float process_echo(float in, float wet, float feedback) {
+    float val = in * (1.0f - wet) + echobuffer[echo_tap3] * (wet * 0.3) + echobuffer[echo_tap0] * (wet * 0.2) + echobuffer[echo_tap2] * (wet * 0.3) + echobuffer[echo_tap1] * (wet * 0.2);
+    echobuffer[echo_pos] = val * feedback;
+    echo_tap0++;
+    echo_tap1++;
+    echo_tap2++;
+    echo_tap3++;
+    echo_pos++;
+    if (echo_pos >= ECHO_LEN) echo_pos -= ECHO_LEN;
+    if (echo_tap0 >= ECHO_LEN) echo_tap0 -= ECHO_LEN;
+    if (echo_tap1 >= ECHO_LEN) echo_tap1 -= ECHO_LEN;
+    if (echo_tap2 >= ECHO_LEN) echo_tap2 -= ECHO_LEN;
+    if (echo_tap3 >= ECHO_LEN) echo_tap3 -= ECHO_LEN;
+    return val;
 }
 
-float oscillate(uint num){
-  oscillators[num].pos += oscillators[num].step;
-  if (oscillators[num].pos >= OSC_POS_MAX) oscillators[num].pos -= OSC_POS_MAX;
-  return (*oscillators[num].buffer)[oscillators[num].pos >> 16u];
+void init_oscillators() {
+    for (uint i = 0; i < OSC_BUFFER_LEN; i++) {
+        sine_buffer[i] = cosf(2.0f * M_PI * ((float)i / OSC_BUFFER_LEN));
+        saw_buffer[i] = -1.0f + 2.0f * ((float)i / OSC_BUFFER_LEN);
+    }
+    for (int i = 0; i < OSC_NUM; i++) {
+        oscillators[i].is_on = false;
+    }
 }
 
+void start_oscillator(uint num, float (*buffer)[OSC_BUFFER_LEN], uint step, uint detune) {
+    if (num < OSC_NUM) {
+        oscillators[num].buffer = buffer;
+        oscillators[num].step = step;
+        oscillators[num].detune = detune;
+        oscillators[num].is_on = true;
+    }
+}
 
-int main()
-{
+float oscillate(uint num) {
+    oscillators[num].pos += oscillators[num].step + oscillators[num].detune;
+    if (oscillators[num].pos >= OSC_POS_MAX)
+        oscillators[num].pos -= OSC_POS_MAX;
+    return (*oscillators[num].buffer)[oscillators[num].pos >> 16u];
+}
+float clamp_upper(float in, float upper){
+    if(in < upper) return in;
+    return upper; 
+}
+float clamp_lower(float in,float lower){
+    if(in > lower) return in;
+    return lower; 
+    
+}
+float clamp(float in, float lower, float upper){
+    if (in < lower) return lower;
+    if (in > upper) return upper;
+    return in;
+}
+
+int main() {
     stdio_init_all();
     set_sys_clock_khz(125000, true);
     init_pio();
     init_audio_buffers();
-    init_dma(); 
+    init_dma();
+    dma_handler();
+    init_adc();
     init_oscillators();
-    
-    //start_oscillator(0, &sine_buffer, 5177344);
-    //start_oscillator(1, &saw_buffer, 3473408);
-    //start_oscillator(2, &saw_buffer, 4390912);
-    
-    float vol = 0.4;
-    
+    init_echo();
+
+    // start_oscillator(0, &sine_buffer, 5177344);
+    // start_oscillator(1, &saw_buffer, 3473408);
+    // start_oscillator(2, &saw_buffer, 4390912);
+
+    float vol = 0.8;
+
     /*struct adsr envelope;
     construct_adsr(&envelope, 0.001f,0.2f,0.8f,0.6f,0.5f);
     struct adsr envelope1;
     construct_adsr(&envelope1, 0.001f,0.2f,0.8f,0.6f,0.7f);
     struct adsr envelope2;
     construct_adsr(&envelope2, 0.6f,0.6f,0.1f,0.05f,0.3f);
-*/
+  
+    enum notes chosen_notes[] = {Db5, Gb3, Bb4};
+    struct adsr envs[3];
+    for (int i = 0; i < 2; i++) {
+        construct_adsr(&envs[i], 0.05f, 0.02f, 0.2f, 0.1f, 1.0f, 0.0f);
+        restart_envelope(&envs[i]);
+        start_oscillator(i, &saw_buffer, chosen_notes[i]);
+    }*/
 
-    struct adsr envs[12];
-    for (int i = 0; i < 12; i++){
-      construct_adsr(&envs[i], 0.001f,0.02f,0.4f,0.6f,0.7f);
-      start_oscillator(i, &saw_buffer, notes[i]);
-    }
+    enum notes note = E3;
+    enum notes note2 = B4;
 
-    struct adsr filter_env;
-    construct_adsr(&filter_env, 0.02f, 0.3f, 0.6f, 0.3f, 0.7f);
+    start_oscillator(0, &saw_buffer, note, 0);
+    start_oscillator(1, &saw_buffer, note, 0);
+    start_oscillator(2, &saw_buffer, note2, 0);
+    start_oscillator(3, &saw_buffer, note2, 0);
+
     struct filter fil;
-    set_filter(&fil, 600.0f, 0.8f, true);
-    
-    char chars[] = {'a', 'w', 's', 'e', 'd', 'f','t', 'g', 'z', 'h', 'u', 'j', 'k'};
-    uint mul = 0;
-    dma_handler();
-    while(1){
-/*    if (!envelope1.active) envelope1.active = true;  // if(envelope.active) a = 1;
-    if (!envelope.active) envelope.active = true;
-    if (!envelope2.active) envelope2.active = true;
-  */  //printf("pos: %f, val %f , phase %f, active %d \n", envelope.pos, envelope.value, envelope.phase, a);
-	  volatile struct audiobuffer *buf = get_empty_buffer();
-	  buf->status = used;
-      int c = getchar_timeout_us(0);
-      if (c > 0){ 
-        if (c == 'n') mul += 1;
-        if (c == 'b') mul -= 1;
-        if(mul > 3 || mul < 0) mul = 0;
-        for (int i = 0; i < 12; i++){
-          if( c =='b' || c== 'n'){
-            start_oscillator(i, &saw_buffer, notes[i + 12 * mul]);
-          }else{
-              if (c == chars[i]) {
-                restart_envelope(&envs[i]);
-                restart_envelope(&filter_env);
-                printf("%c, %f \n", c, vol);
-              }
-          }
+    float val = 0.0f;
+    int detune = 0;
+    set_filter(&fil, 600.0f, 0.5f, true);
+    while (1) {
+        count_detection();  
+        //printf("%f\n", adc_value);
+        volatile struct audiobuffer* buf = get_empty_buffer();
+        buf->status = used;
+        val = fabsf(adc_value - 0.007f) * 0.99 + val * 0.01f;
+        detune = (int) ((float) 0x10000 * clamp(adc_value * 10.0f, 0.0f, 1.0f));
+        //val = clamp_lower(powf(val, 0.1f) - 0.15f, 0.0f);
+        //vol = clamp_up(val + 0.1f, 1.0f);
+        //printf("%f\n", vol);
+        oscillators[0].detune = detune;
+        oscillators[2].detune = detune;
+        set_filter(&fil, 600.0f, clamp(val * 30.0f, 0.4f, 0.95f), false);
+        for (uint i = 0; i < AUDIO_BUFFER_LEN; i++) {
+           // set_filter(&fil, 100.0f * (adc_value * 10.0f + 10.0f) + 200.0f + 200 * mul, 0.5f, false);
+            float v = 0;
+            v += vol * (0.25f * oscillate(0) + 0.25f * oscillate(1) +0.25f * oscillate(2) + 0.25f * oscillate(3));
+            buf->buffer[i] = to_audio(filter_audio(&fil, v));
         }
-        if (c == '+') vol += 0.1;
-        if (c == '-') vol -= 0.1;
-        if(vol > 1.0f || vol < 0.0f) vol = 0.1f;
-      }
-	  for (uint i = 0; i < AUDIO_BUFFER_LEN; i++){
-      //tick_adsr(&envelope);
-      //tick_adsr(&envelope1);
-      //tick_adsr(&envelope2);
-      //set_filter(&fil, 600.0f * envelope2.value, 0.6f, false);;
-      tick_adsr(&filter_env);
-      set_filter(&fil, 500.0f * filter_env.value, 0.8f, false);
-	    float v = 0;//filter_audio(&fil, vol * oscillate(0));// + vol * envelope1.value  * sine_buffer[pos >> 16u]); //+ vol * sine_buffer[pos3 >> 16u];
-      for (int i = 0; i < 12; i++){
-         tick_adsr(&envs[i]);
-         v += vol * envs[i].value * oscillate(i);
-      }
-      buf->buffer[i] = to_audio(filter_audio(&fil, v));
-     }
-	   buf->status = full;
+        buf->status = full;
     }
     return 0;
 }

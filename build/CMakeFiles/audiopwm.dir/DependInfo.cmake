@@ -124,6 +124,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/home/unheil/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/include"
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/include"
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/include"
+  "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/include"
   )
 
 # The set of dependency files which are needed:
@@ -158,6 +159,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/unheil/pico/pico-sdk/src/common/pico_util/datetime.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/datetime.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/datetime.c.obj.d"
   "/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c.obj.d"
   "/home/unheil/pico/pico-sdk/src/common/pico_util/queue.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/queue.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/queue.c.obj.d"
+  "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj.d"
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj.d"
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj.d"
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj.d"

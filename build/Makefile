@@ -940,6 +940,30 @@ home/unheil/pico/pico-sdk/src/common/pico_util/queue.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/queue.c.s
 .PHONY : home/unheil/pico/pico-sdk/src/common/pico_util/queue.c.s
 
+home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.obj: home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+.PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.obj
+
+# target to build an object file
+home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+.PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+
+home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.i: home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.i
+.PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.i
+
+# target to preprocess a source file
+home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.i
+.PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.i
+
+home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.s: home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.s
+.PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.s
+
+# target to generate assembly for a file
+home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.s
+.PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.s
+
 home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.obj: home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 .PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.obj
 
@@ -1926,6 +1950,9 @@ help:
 	@echo "... home/unheil/pico/pico-sdk/src/common/pico_util/queue.obj"
 	@echo "... home/unheil/pico/pico-sdk/src/common/pico_util/queue.i"
 	@echo "... home/unheil/pico/pico-sdk/src/common/pico_util/queue.s"
+	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.obj"
+	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.i"
+	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.s"
 	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.obj"
 	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.i"
 	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.s"

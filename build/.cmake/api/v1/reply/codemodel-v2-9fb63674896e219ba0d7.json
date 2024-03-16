@@ -1137,7 +1137,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ELF2UF2Build::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ELF2UF2Build-Debug-d6a524d4c78c0babc797.json",
+					"jsonFile" : "target-ELF2UF2Build-Debug-f507d5c66d501196138e.json",
 					"name" : "ELF2UF2Build",
 					"projectIndex" : 0
 				},
@@ -1151,7 +1151,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "audiopwm::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-audiopwm-Debug-6bfbf4d951c88391321a.json",
+					"jsonFile" : "target-audiopwm-Debug-c00c1bd531e0a2bda9ba.json",
 					"name" : "audiopwm",
 					"projectIndex" : 0
 				},

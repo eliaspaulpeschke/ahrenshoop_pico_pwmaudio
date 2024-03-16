@@ -73,6 +73,7 @@ target_include_directories(audiopwm PRIVATE
 target_link_libraries(audiopwm 
         hardware_dma
         hardware_pio
+        hardware_adc
         )
 
 pico_add_extra_outputs(audiopwm)

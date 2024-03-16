@@ -1094,6 +1094,20 @@ CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pi
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c -o CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
 
+CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj: CMakeFiles/audiopwm.dir/flags.make
+CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj: /home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c
+CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj: CMakeFiles/audiopwm.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unheil/pico/audiopwm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj -MF CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj.d -o CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj -c /home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c
+
+CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c > CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.i
+
+CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c -o CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.s
+
 # Object files for target audiopwm
 audiopwm_OBJECTS = \
 "CMakeFiles/audiopwm.dir/audiopwm.c.obj" \
@@ -1169,7 +1183,8 @@ audiopwm_OBJECTS = \
 "CMakeFiles/audiopwm.dir/adsr.c.obj" \
 "CMakeFiles/audiopwm.dir/filter.c.obj" \
 "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj" \
-"CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj"
+"CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj" \
+"CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj"
 
 # External object files for target audiopwm
 audiopwm_EXTERNAL_OBJECTS =
@@ -1248,10 +1263,11 @@ audiopwm.elf: CMakeFiles/audiopwm.dir/adsr.c.obj
 audiopwm.elf: CMakeFiles/audiopwm.dir/filter.c.obj
 audiopwm.elf: CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
 audiopwm.elf: CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+audiopwm.elf: CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
 audiopwm.elf: CMakeFiles/audiopwm.dir/build.make
 audiopwm.elf: pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
 audiopwm.elf: CMakeFiles/audiopwm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/unheil/pico/audiopwm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Linking CXX executable audiopwm.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/unheil/pico/audiopwm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Linking CXX executable audiopwm.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/audiopwm.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/arm-none-eabi-objcopy -Oihex /home/unheil/pico/audiopwm/build/audiopwm.elf audiopwm.hex
 	/usr/bin/arm-none-eabi-objcopy -Obinary /home/unheil/pico/audiopwm/build/audiopwm.elf audiopwm.bin
