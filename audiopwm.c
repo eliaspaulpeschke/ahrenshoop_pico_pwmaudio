@@ -291,23 +291,36 @@ int main() {
     }*/
     float vol_1 = 0.1;
     float vol_2 = 0.1;
+    float vol_all = 0.3;
 
-    enum notes note_1 = G3;
-    enum notes note_2 = D4;
+    enum notes note_1 = A4;
+    enum notes note_2 = G4;
 
     bool waveform = true;
     start_oscillator(0, &sine_buffer, note_1, 0);
-    start_oscillator(1, &sine_buffer, note_1, 0);
+    start_oscillator(1, &sine_buffer, note_2, 0);
+
+    struct filter fil;
+    set_filter(&fil, 600.0f, 0.4f, true);
 
     while (1) {
         //count_detection();
-        // printf("%f\n", adc_value);
+        printf("%f\n", adc_value);
+        if (adc_value - 0.007 > 0){
+            vol_1 = clamp_upper(adc_value * 1.0f + 0.1, 0.45);
+        }else{
+            vol_2 = clamp_upper(adc_value * -1.0f + 0.1, 0.45);
+        }
+
+        vol_all = fabsf(adc_value);
+        set_filter(&fil, clamp(vol_all * 2500.0f, 400.0f, 4000.0f), clamp(vol_all, 0.3, 0.85), false);
+        vol_all = clamp(vol_all, 0.05, 0.95);
         volatile struct audiobuffer* buf = get_empty_buffer();
         buf->status = used;
         for (uint i = 0; i < AUDIO_BUFFER_LEN; i++) {
             // set_filter(&fil, 100.0f * (adc_value * 10.0f + 10.0f) + 200.0f + 200 * mul, 0.5f, false);
-            float v = vol_1 * oscillate(0) + vol_2 * oscillate(1);
-            buf->buffer[i] = to_audio(v);
+            float v = vol_all* (vol_1 * oscillate(0) + vol_2 * oscillate(1));
+            buf->buffer[i] = to_audio(filter_audio(&fil, v));
         }
         buf->status = full;
     }
