@@ -274,7 +274,6 @@ int main() {
     // start_oscillator(1, &saw_buffer, 3473408);
     // start_oscillator(2, &saw_buffer, 4390912);
 
-    float vol = 0.8;
 
     /*struct adsr envelope;
     construct_adsr(&envelope, 0.001f,0.2f,0.8f,0.6f,0.5f);
@@ -290,52 +289,25 @@ int main() {
         restart_envelope(&envs[i]);
         start_oscillator(i, &saw_buffer, chosen_notes[i]);
     }*/
+    float vol_1 = 0.1;
+    float vol_2 = 0.1;
 
-    enum notes note = E3;
-    enum notes note2 = B4;
+    enum notes note_1 = G3;
+    enum notes note_2 = D4;
 
-    start_oscillator(0, &saw_buffer, note, 0);
-    start_oscillator(1, &saw_buffer, note, 0);
-    start_oscillator(2, &saw_buffer, note2, 0);
-    start_oscillator(3, &saw_buffer, note2, 0);
-
-    struct filter fil;
-    struct filter fil2;
-    float val = 0.0f;
-    float res = 0.0f;
-    int detune = 0;
-    set_filter(&fil, 600.0f, 0.5f, true);
-    set_filter(&fil2, 700.0f, 0.2f, true);
+    bool waveform = true;
+    start_oscillator(0, &sine_buffer, note_1, 0);
+    start_oscillator(1, &sine_buffer, note_1, 0);
 
     while (1) {
-        count_detection();
+        //count_detection();
         // printf("%f\n", adc_value);
         volatile struct audiobuffer* buf = get_empty_buffer();
         buf->status = used;
-        val = fabsf(adc_value - 0.007f) * 0.99 + val * 0.01f;
-        detune = (int)((float)0x80000 * clamp(adc_value * 10.0f, 0.0f, 1.0f));
-        // val = clamp_lower(powf(val, 0.1f) - 0.15f, 0.0f);
-        // vol = clamp_up(val + 0.1f, 1.0f);
-        oscillators[0].detune = detune;
-        oscillators[2].detune = detune;
-        vol = clamp(val * 120.0f - 0.2, 0.2f, 0.95f) * 0.6f + vol * 0.4f;
-        res = clamp(val * 80.0f, 0.4f, 0.95f) * 0.3f + res * 0.7f;
-        float freq = 600.0f;
-        if (res > 0.8f) {
-            freq = (freq * 3) / 2;
-        }
-        if (res > 0.85f) {
-            freq = (freq * 3) / 2;
-        }
-        if (res > 0.9f) {
-            freq = (freq * 3) / 2;
-        }
-        set_filter(&fil, freq, res, false);
         for (uint i = 0; i < AUDIO_BUFFER_LEN; i++) {
             // set_filter(&fil, 100.0f * (adc_value * 10.0f + 10.0f) + 200.0f + 200 * mul, 0.5f, false);
-            float v = 0;
-            v += vol * (0.1f * oscillate(0) + 0.1f * oscillate(1) + 0.4f * oscillate(2) + 0.4f * oscillate(3));
-            buf->buffer[i] = to_audio(filter_audio(&fil2, filter_audio(&fil, v)));
+            float v = vol_1 * oscillate(0) + vol_2 * oscillate(1);
+            buf->buffer[i] = to_audio(v);
         }
         buf->status = full;
     }
