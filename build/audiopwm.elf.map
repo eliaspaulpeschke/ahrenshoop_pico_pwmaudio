@@ -1518,9 +1518,9 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
  .data          0x00000000        0x0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
  .bss           0x00000000        0x0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
- .text          0x00000000        0x0 /tmp/cct7M1YZ.o
- .data          0x00000000        0x0 /tmp/cct7M1YZ.o
- .bss           0x00000000        0x0 /tmp/cct7M1YZ.o
+ .text          0x00000000        0x0 /tmp/ccMRi4c5.o
+ .data          0x00000000        0x0 /tmp/ccMRi4c5.o
+ .bss           0x00000000        0x0 /tmp/ccMRi4c5.o
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000       0x10 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-atexit.o)
@@ -1784,7 +1784,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /tmp/cct7M1YZ.o
+ .boot2         0x10000000      0x100 /tmp/ccMRi4c5.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -1870,49 +1870,49 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  .text.set_filter
                 0x10000598       0xac CMakeFiles/audiopwm.dir/audiopwm.c.obj
  .text.get_empty_buffer
-                0x10000644       0x34 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x10000644       0x30 CMakeFiles/audiopwm.dir/audiopwm.c.obj
                 0x10000644                get_empty_buffer
  .text.get_playable_buffer
-                0x10000678       0x40 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x10000678                get_playable_buffer
+                0x10000674       0x3c CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x10000674                get_playable_buffer
  .text.dma_handler
-                0x100006b8       0x40 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x100006b8                dma_handler
+                0x100006b0       0x40 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x100006b0                dma_handler
  .text.init_audio_buffers
-                0x100006f8       0x58 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x100006f8                init_audio_buffers
+                0x100006f0       0x54 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x100006f0                init_audio_buffers
  .text.to_audio
-                0x10000750       0x30 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x10000750                to_audio
+                0x10000744       0x30 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x10000744                to_audio
  .text.init_pio
-                0x10000780       0x40 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x10000780                init_pio
+                0x10000774       0x40 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x10000774                init_pio
  .text.init_dma
-                0x100007c0       0x64 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x100007c0                init_dma
+                0x100007b4       0x64 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x100007b4                init_dma
  .text.init_adc
-                0x10000824       0xbc CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x10000824                init_adc
+                0x10000818       0xbc CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x10000818                init_adc
  .text.init_echo
-                0x100008e0       0x58 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x100008e0                init_echo
+                0x100008d4       0x58 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x100008d4                init_echo
  .text.init_oscillators
-                0x10000938       0x7c CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x10000938                init_oscillators
+                0x1000092c       0x7c CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x1000092c                init_oscillators
  .text.start_oscillator
-                0x100009b4       0x20 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x100009b4                start_oscillator
+                0x100009a8       0x20 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x100009a8                start_oscillator
  .text.oscillate
-                0x100009d4       0x50 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x100009d4                oscillate
+                0x100009c8       0x50 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x100009c8                oscillate
  .text.clamp_upper
-                0x10000a24       0x16 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x10000a24                clamp_upper
- .text.clamp    0x10000a3a       0x28 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x10000a3a                clamp
- *fill*         0x10000a62        0x2 
- .text.main     0x10000a64      0x2cc CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x10000a64                main
+                0x10000a18       0x16 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x10000a18                clamp_upper
+ .text.clamp    0x10000a2e       0x28 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x10000a2e                clamp
+ *fill*         0x10000a56        0x2 
+ .text.main     0x10000a58      0x2d8 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x10000a58                main
  .text.set_sys_clock_pll
                 0x10000d30       0x78 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
                 0x10000d30                set_sys_clock_pll
@@ -3401,7 +3401,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x20041000                        __scratch_y_end__ = .
                 0x1000a724                        __scratch_y_source__ = LOADADDR (.scratch_y)
 
-.bss            0x20000c08     0x9f1c
+.bss            0x20000c08     0x931c
                 0x20000c08                        . = ALIGN (0x4)
                 0x20000c08                        __bss_start__ = .
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.bss*)))
@@ -3441,120 +3441,120 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x20001184       0x10 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.boot2_copyout
                 0x20001194      0x100 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .bss.buffers   0x20001294      0xc0c CMakeFiles/audiopwm.dir/audiopwm.c.obj
+ .bss.buffers   0x20001294      0x30c CMakeFiles/audiopwm.dir/audiopwm.c.obj
  .bss.chars_available_callback
-                0x20001ea0        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x200015a0        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .bss.chars_available_callback
-                0x20001ea4        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x200015a4        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .bss.chars_available_param
-                0x20001ea8        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x200015a8        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .bss.chars_available_param
-                0x20001eac        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .bss.claimed   0x20001eb0        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x200015ac        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .bss.claimed   0x200015b0        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .bss.configured_freq
-                0x20001eb4       0x28 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x200015b4       0x28 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .bss.default_alarm_pool_entry_ids_high
-                0x20001edc       0x10 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x200015dc       0x10 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
  .bss.default_alarm_pool_heap_nodes
-                0x20001eec       0x30 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x200015ec       0x30 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
  .bss.desc_str.0
-                0x20001f1c       0x28 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- .bss.dma_chan  0x20001f44        0x4 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x20001f44                dma_chan
- .bss.drivers   0x20001f48        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x2000161c       0x28 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ .bss.dma_chan  0x20001644        0x4 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x20001644                dma_chan
+ .bss.drivers   0x20001648        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .bss.e15_last_sof
-                0x20001f4c        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x20001f4c                e15_last_sof
+                0x2000164c        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x2000164c                e15_last_sof
  .bss.echobuffer
-                0x20001f50     0x4000 CMakeFiles/audiopwm.dir/audiopwm.c.obj
- .bss.filter    0x20005f50        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x20001650     0x4000 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+ .bss.filter    0x20005650        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .bss.hw_endpoints
-                0x20005f54      0x400 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x20005654      0x400 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .bss.load_value
-                0x20006354        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x20005a54        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .bss.next_buffer_ptr
-                0x20006358        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .bss.offset    0x2000635c        0x4 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x2000635c                offset
+                0x20005a58        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .bss.offset    0x20005a5c        0x4 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x20005a5c                offset
  .bss.one_shot_timer_crit_sec
-                0x20006360        0x8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x20005a60        0x8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .bss.oscillators
-                0x20006368      0x140 CMakeFiles/audiopwm.dir/audiopwm.c.obj
- .bss.pio       0x200064a8        0x4 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x200064a8                pio
+                0x20005a68      0x140 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+ .bss.pio       0x20005ba8        0x4 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x20005ba8                pio
  .bss.playing_buffer
-                0x200064ac        0x4 CMakeFiles/audiopwm.dir/audiopwm.c.obj
- .bss.pools     0x200064b0       0x10 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x20005bac        0x4 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+ .bss.pools     0x20005bb0       0x10 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
  .bss.retrieved_id
-                0x200064c0        0x8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x20005bc0        0x8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .bss.saw_buffer
-                0x200064c8     0x2000 CMakeFiles/audiopwm.dir/audiopwm.c.obj
- .bss.sd_table  0x200084c8      0x100 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x200084c8                sd_table
+                0x20005bc8     0x2000 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+ .bss.sd_table  0x20007bc8      0x100 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x20007bc8                sd_table
  .bss.sf_clz_func
-                0x200085c8        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x200085c8                sf_clz_func
- .bss.sf_table  0x200085cc      0x100 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x200085cc                sf_table
- .bss.silence   0x200086cc      0x404 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x20007cc8        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x20007cc8                sf_clz_func
+ .bss.sf_table  0x20007ccc      0x100 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x20007ccc                sf_table
+ .bss.silence   0x20007dcc      0x104 CMakeFiles/audiopwm.dir/audiopwm.c.obj
  .bss.sine_buffer
-                0x20008ad0     0x2000 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x20007ed0     0x2000 CMakeFiles/audiopwm.dir/audiopwm.c.obj
  .bss.sleep_notifier
-                0x2000aad0        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
- .bss.sm        0x2000aad4        0x4 CMakeFiles/audiopwm.dir/audiopwm.c.obj
-                0x2000aad4                sm
+                0x20009ed0        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .bss.sm        0x20009ed4        0x4 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x20009ed4                sm
  .bss.stdio_usb_mutex
-                0x2000aad8        0x8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x20009ed8        0x8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .bss.target_hi
-                0x2000aae0       0x10 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x20009ee0       0x10 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.uart_char_to_line_feed
-                0x2000aaf0        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-                0x2000aaf0                uart_char_to_line_feed
+                0x20009ef0        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x20009ef0                uart_char_to_line_feed
  .bss.uart_instance
-                0x2000aaf4        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x20009ef4        0x4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .bss.usbd_serial_str
-                0x2000aaf8       0x11 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- *fill*         0x2000ab09        0x1 
- .bss._claimed  0x2000ab0a        0x2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
- .bss.echo_pos  0x2000ab0c        0x2 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x20009ef8       0x11 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ *fill*         0x20009f09        0x1 
+ .bss._claimed  0x20009f0a        0x2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
+ .bss.echo_pos  0x20009f0c        0x2 CMakeFiles/audiopwm.dir/audiopwm.c.obj
  .bss.echo_tap0
-                0x2000ab0e        0x2 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x20009f0e        0x2 CMakeFiles/audiopwm.dir/audiopwm.c.obj
  .bss.echo_tap1
-                0x2000ab10        0x2 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x20009f10        0x2 CMakeFiles/audiopwm.dir/audiopwm.c.obj
  .bss.echo_tap2
-                0x2000ab12        0x2 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x20009f12        0x2 CMakeFiles/audiopwm.dir/audiopwm.c.obj
  .bss.echo_tap3
-                0x2000ab14        0x2 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x20009f14        0x2 CMakeFiles/audiopwm.dir/audiopwm.c.obj
  .bss._app_driver_count
-                0x2000ab16        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x20009f16        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .bss._sof_enable
-                0x2000ab17        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x20009f17        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .bss.boot2_copyout_valid
-                0x2000ab18        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .bss.claimed   0x2000ab19        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .bss.claimed   0x2000ab1a        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x20009f18        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .bss.claimed   0x20009f19        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .bss.claimed   0x20009f1a        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .bss.irq_hander_chain_free_slot_head
-                0x2000ab1b        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- .bss.itf_num   0x2000ab1c        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x20009f1b        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .bss.itf_num   0x20009f1c        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .bss.low_priority_irq_num
-                0x2000ab1d        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x20009f1d        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .bss.one_shot_timer_pending
-                0x2000ab1e        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x20009f1e        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .bss.timer_callbacks_pending
-                0x2000ab1f        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x20009f1f        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.user_irq_claimed
-                0x2000ab20        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x20009f20        0x1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  *(COMMON)
-                0x2000ab24                        . = ALIGN (0x4)
- *fill*         0x2000ab21        0x3 
-                0x2000ab24                        __bss_end__ = .
+                0x20009f24                        . = ALIGN (0x4)
+ *fill*         0x20009f21        0x3 
+                0x20009f24                        __bss_end__ = .
 
-.heap           0x2000ab24      0x800
-                0x2000ab24                        __end__ = .
-                0x2000ab24                        end = __end__
+.heap           0x20009f24      0x800
+                0x20009f24                        __end__ = .
+                0x20009f24                        end = __end__
  *(.heap*)
- .heap          0x2000ab24      0x800 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-                0x2000b324                        __HeapLimit = .
+ .heap          0x20009f24      0x800 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x2000a724                        __HeapLimit = .
 
 .stack1_dummy
  *(.stack1*)
@@ -3648,7 +3648,7 @@ LOAD CMakeFiles/audiopwm.dir/filter.c.obj
 LOAD CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
 LOAD CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
 LOAD CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
-LOAD /tmp/cct7M1YZ.o
+LOAD /tmp/ccMRi4c5.o
 LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -3779,7 +3779,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x000008d6       0x2c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
  .ARM.attributes
-                0x00000902       0x22 /tmp/cct7M1YZ.o
+                0x00000902       0x22 /tmp/ccMRi4c5.o
  .ARM.attributes
                 0x00000924       0x1e /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
@@ -3837,204 +3837,204 @@ LOAD linker stubs
                                  0x34 (size before relaxing)
  .comment       0x00000059       0x27 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtend.o
 
-.debug_info     0x00000000    0x2e528
- .debug_info    0x00000000     0x32d8 CMakeFiles/audiopwm.dir/audiopwm.c.obj
- .debug_info    0x000032d8      0x4d1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
- .debug_info    0x000037a9     0x17d1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_info    0x00004f7a      0x1e3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
- .debug_info    0x0000515d      0x682 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
- .debug_info    0x000057df      0x5c3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- .debug_info    0x00005da2     0x1bc3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- .debug_info    0x00007965      0x197 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
- .debug_info    0x00007afc     0x1ce9 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .debug_info    0x000097e5      0x2bf CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .debug_info    0x00009aa4     0x33ad CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
- .debug_info    0x0000ce51     0x13ee CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .debug_info    0x0000e23f      0xe63 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- .debug_info    0x0000f0a2      0xd74 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
- .debug_info    0x0000fe16      0xfb7 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_info    0x00010dcd      0x4ed CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
- .debug_info    0x000112ba      0x4c5 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_info    0x0001177f      0x1af CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_info    0x0001192e      0xf17 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_info    0x00012845     0x198a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .debug_info    0x000141cf       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_info    0x000141f2      0x301 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_info    0x000144f3       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
- .debug_info    0x00014516       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_info    0x00014539      0x30b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_info    0x00014844       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_info    0x00014867       0x24 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_info    0x0001488b       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_info    0x000148ae      0x31f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_info    0x00014bcd     0x3c04 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
- .debug_info    0x000187d1       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
- .debug_info    0x000187f4       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_info    0x00018817       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_info    0x0001883a      0x2b2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_info    0x00018aec     0x173a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_info    0x0001a226     0x1003 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .debug_info    0x0001b229      0x74a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
- .debug_info    0x0001b973     0x170a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .debug_info    0x0001d07d      0x5be CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- .debug_info    0x0001d63b      0x269 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_info    0x0001d8a4     0x1240 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .debug_info    0x0001eae4     0x2046 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .debug_info    0x00020b2a      0xf9a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- .debug_info    0x00021ac4     0x399e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
- .debug_info    0x00025462      0x836 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
- .debug_info    0x00025c98     0x1a66 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
- .debug_info    0x000276fe     0x14a2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
- .debug_info    0x00028ba0     0x273e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
- .debug_info    0x0002b2de      0x25d CMakeFiles/audiopwm.dir/filter.c.obj
- .debug_info    0x0002b53b      0xa25 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
- .debug_info    0x0002bf60     0x21f3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
- .debug_info    0x0002e153      0x2ae CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
- .debug_info    0x0002e401       0x39 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .debug_info    0x0002e43a       0xee /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
+.debug_info     0x00000000    0x2e533
+ .debug_info    0x00000000     0x32e3 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+ .debug_info    0x000032e3      0x4d1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+ .debug_info    0x000037b4     0x17d1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_info    0x00004f85      0x1e3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .debug_info    0x00005168      0x682 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_info    0x000057ea      0x5c3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_info    0x00005dad     0x1bc3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_info    0x00007970      0x197 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .debug_info    0x00007b07     0x1ce9 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .debug_info    0x000097f0      0x2bf CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .debug_info    0x00009aaf     0x33ad CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .debug_info    0x0000ce5c     0x13ee CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_info    0x0000e24a      0xe63 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ .debug_info    0x0000f0ad      0xd74 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+ .debug_info    0x0000fe21      0xfb7 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_info    0x00010dd8      0x4ed CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_info    0x000112c5      0x4c5 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_info    0x0001178a      0x1af CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_info    0x00011939      0xf17 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_info    0x00012850     0x198a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .debug_info    0x000141da       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_info    0x000141fd      0x301 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_info    0x000144fe       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+ .debug_info    0x00014521       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_info    0x00014544      0x30b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_info    0x0001484f       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_info    0x00014872       0x24 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_info    0x00014896       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_info    0x000148b9      0x31f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_info    0x00014bd8     0x3c04 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+ .debug_info    0x000187dc       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_info    0x000187ff       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_info    0x00018822       0x23 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_info    0x00018845      0x2b2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_info    0x00018af7     0x173a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_info    0x0001a231     0x1003 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .debug_info    0x0001b234      0x74a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+ .debug_info    0x0001b97e     0x170a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .debug_info    0x0001d088      0x5be CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ .debug_info    0x0001d646      0x269 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_info    0x0001d8af     0x1240 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .debug_info    0x0001eaef     0x2046 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .debug_info    0x00020b35      0xf9a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .debug_info    0x00021acf     0x399e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+ .debug_info    0x0002546d      0x836 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+ .debug_info    0x00025ca3     0x1a66 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+ .debug_info    0x00027709     0x14a2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+ .debug_info    0x00028bab     0x273e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+ .debug_info    0x0002b2e9      0x25d CMakeFiles/audiopwm.dir/filter.c.obj
+ .debug_info    0x0002b546      0xa25 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
+ .debug_info    0x0002bf6b     0x21f3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+ .debug_info    0x0002e15e      0x2ae CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+ .debug_info    0x0002e40c       0x39 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x0002e445       0xee /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
 
-.debug_abbrev   0x00000000     0x88af
- .debug_abbrev  0x00000000      0x6b9 CMakeFiles/audiopwm.dir/audiopwm.c.obj
- .debug_abbrev  0x000006b9      0x1e0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
- .debug_abbrev  0x00000899      0x3a6 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_abbrev  0x00000c3f       0xf8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
- .debug_abbrev  0x00000d37      0x2ce CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
- .debug_abbrev  0x00001005      0x249 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- .debug_abbrev  0x0000124e      0x500 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- .debug_abbrev  0x0000174e      0x116 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
- .debug_abbrev  0x00001864      0x3e8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .debug_abbrev  0x00001c4c      0x1ce CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .debug_abbrev  0x00001e1a      0x5c3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
- .debug_abbrev  0x000023dd      0x3d5 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .debug_abbrev  0x000027b2      0x290 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- .debug_abbrev  0x00002a42      0x349 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
- .debug_abbrev  0x00002d8b      0x434 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_abbrev  0x000031bf      0x1e7 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
- .debug_abbrev  0x000033a6      0x1a8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_abbrev  0x0000354e      0x10c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_abbrev  0x0000365a      0x530 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_abbrev  0x00003b8a      0x38a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .debug_abbrev  0x00003f14       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_abbrev  0x00003f26      0x167 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_abbrev  0x0000408d       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
- .debug_abbrev  0x0000409f       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_abbrev  0x000040b1      0x1c3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_abbrev  0x00004274       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_abbrev  0x00004286       0x14 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_abbrev  0x0000429a       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_abbrev  0x000042ac      0x1c6 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_abbrev  0x00004472      0x29a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
- .debug_abbrev  0x0000470c       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
- .debug_abbrev  0x0000471e       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_abbrev  0x00004730       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_abbrev  0x00004742       0xb8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_abbrev  0x000047fa      0x47a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_abbrev  0x00004c74      0x485 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .debug_abbrev  0x000050f9      0x2ca CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
- .debug_abbrev  0x000053c3      0x543 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .debug_abbrev  0x00005906      0x15a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- .debug_abbrev  0x00005a60      0x181 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_abbrev  0x00005be1      0x2bd CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .debug_abbrev  0x00005e9e      0x563 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .debug_abbrev  0x00006401      0x449 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- .debug_abbrev  0x0000684a      0x61a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
- .debug_abbrev  0x00006e64      0x2e8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
- .debug_abbrev  0x0000714c      0x4b9 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
- .debug_abbrev  0x00007605      0x472 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
- .debug_abbrev  0x00007a77      0x47a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
- .debug_abbrev  0x00007ef1       0xd9 CMakeFiles/audiopwm.dir/filter.c.obj
- .debug_abbrev  0x00007fca      0x265 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
- .debug_abbrev  0x0000822f      0x4c3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
- .debug_abbrev  0x000086f2      0x10f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
- .debug_abbrev  0x00008801       0x1f /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .debug_abbrev  0x00008820       0x8f /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
+.debug_abbrev   0x00000000     0x8897
+ .debug_abbrev  0x00000000      0x6a1 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+ .debug_abbrev  0x000006a1      0x1e0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+ .debug_abbrev  0x00000881      0x3a6 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_abbrev  0x00000c27       0xf8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .debug_abbrev  0x00000d1f      0x2ce CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_abbrev  0x00000fed      0x249 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_abbrev  0x00001236      0x500 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_abbrev  0x00001736      0x116 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .debug_abbrev  0x0000184c      0x3e8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .debug_abbrev  0x00001c34      0x1ce CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .debug_abbrev  0x00001e02      0x5c3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .debug_abbrev  0x000023c5      0x3d5 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_abbrev  0x0000279a      0x290 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ .debug_abbrev  0x00002a2a      0x349 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+ .debug_abbrev  0x00002d73      0x434 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_abbrev  0x000031a7      0x1e7 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_abbrev  0x0000338e      0x1a8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_abbrev  0x00003536      0x10c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_abbrev  0x00003642      0x530 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_abbrev  0x00003b72      0x38a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .debug_abbrev  0x00003efc       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_abbrev  0x00003f0e      0x167 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_abbrev  0x00004075       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+ .debug_abbrev  0x00004087       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_abbrev  0x00004099      0x1c3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_abbrev  0x0000425c       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_abbrev  0x0000426e       0x14 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_abbrev  0x00004282       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_abbrev  0x00004294      0x1c6 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_abbrev  0x0000445a      0x29a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+ .debug_abbrev  0x000046f4       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_abbrev  0x00004706       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_abbrev  0x00004718       0x12 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_abbrev  0x0000472a       0xb8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_abbrev  0x000047e2      0x47a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_abbrev  0x00004c5c      0x485 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .debug_abbrev  0x000050e1      0x2ca CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+ .debug_abbrev  0x000053ab      0x543 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .debug_abbrev  0x000058ee      0x15a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ .debug_abbrev  0x00005a48      0x181 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_abbrev  0x00005bc9      0x2bd CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .debug_abbrev  0x00005e86      0x563 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .debug_abbrev  0x000063e9      0x449 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .debug_abbrev  0x00006832      0x61a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+ .debug_abbrev  0x00006e4c      0x2e8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+ .debug_abbrev  0x00007134      0x4b9 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+ .debug_abbrev  0x000075ed      0x472 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+ .debug_abbrev  0x00007a5f      0x47a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+ .debug_abbrev  0x00007ed9       0xd9 CMakeFiles/audiopwm.dir/filter.c.obj
+ .debug_abbrev  0x00007fb2      0x265 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
+ .debug_abbrev  0x00008217      0x4c3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+ .debug_abbrev  0x000086da      0x10f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+ .debug_abbrev  0x000087e9       0x1f /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x00008808       0x8f /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
 
 .debug_loclists
-                0x00000000    0x12571
+                0x00000000    0x12570
  .debug_loclists
-                0x00000000      0xd14 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x00000000      0xd13 CMakeFiles/audiopwm.dir/audiopwm.c.obj
  .debug_loclists
-                0x00000d14      0x195 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+                0x00000d13      0x195 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
  .debug_loclists
-                0x00000ea9      0x9c2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x00000ea8      0x9c2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
  .debug_loclists
-                0x0000186b       0x9f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x0000186a       0x9f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
  .debug_loclists
-                0x0000190a      0x27b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x00001909      0x27b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
  .debug_loclists
-                0x00001b85      0x157 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x00001b84      0x157 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .debug_loclists
-                0x00001cdc      0xc84 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x00001cdb      0xc84 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .debug_loclists
-                0x00002960       0x4a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x0000295f       0x4a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
  .debug_loclists
-                0x000029aa      0x9bf CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x000029a9      0x9bf CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
  .debug_loclists
-                0x00003369       0x9b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+                0x00003368       0x9b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
  .debug_loclists
-                0x00003404     0x12c0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x00003403     0x12c0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
  .debug_loclists
-                0x000046c4      0x63d CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x000046c3      0x63d CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .debug_loclists
-                0x00004d01      0x690 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x00004d00      0x690 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .debug_loclists
-                0x00005391      0x4de CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x00005390      0x4de CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .debug_loclists
-                0x0000586f      0x502 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x0000586e      0x502 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .debug_loclists
-                0x00005d71      0x1f0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x00005d70      0x1f0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
  .debug_loclists
-                0x00005f61      0x1c7 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x00005f60      0x1c7 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .debug_loclists
-                0x00006128       0x48 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x00006127       0x48 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
  .debug_loclists
-                0x00006170      0x36a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x0000616f      0x36a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .debug_loclists
-                0x000064da     0x1640 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x000064d9     0x1640 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .debug_loclists
-                0x00007b1a      0x12f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x00007b19      0x12f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
  .debug_loclists
-                0x00007c49       0x41 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x00007c48       0x41 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
  .debug_loclists
-                0x00007c8a       0x4f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x00007c89       0x4f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
  .debug_loclists
-                0x00007cd9     0x26cf CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+                0x00007cd8     0x26cf CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
  .debug_loclists
-                0x0000a3a8      0x7d7 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x0000a3a7      0x7d7 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .debug_loclists
-                0x0000ab7f      0x503 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x0000ab7e      0x503 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .debug_loclists
-                0x0000b082      0x22e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x0000b081      0x22e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .debug_loclists
-                0x0000b2b0      0x4c1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x0000b2af      0x4c1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .debug_loclists
-                0x0000b771       0xa9 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x0000b770       0xa9 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .debug_loclists
-                0x0000b81a       0xa5 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x0000b819       0xa5 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .debug_loclists
-                0x0000b8bf      0x63b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x0000b8be      0x63b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .debug_loclists
-                0x0000befa      0x901 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x0000bef9      0x901 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .debug_loclists
-                0x0000c7fb      0x491 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x0000c7fa      0x491 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
  .debug_loclists
-                0x0000cc8c     0x1493 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x0000cc8b     0x1493 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .debug_loclists
-                0x0000e11f      0x29b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x0000e11e      0x29b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
  .debug_loclists
-                0x0000e3ba      0xb17 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x0000e3b9      0xb17 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
  .debug_loclists
-                0x0000eed1      0x81e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x0000eed0      0x81e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
  .debug_loclists
-                0x0000f6ef     0x19b8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x0000f6ee     0x19b8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
  .debug_loclists
-                0x000110a7       0x77 CMakeFiles/audiopwm.dir/filter.c.obj
+                0x000110a6       0x77 CMakeFiles/audiopwm.dir/filter.c.obj
  .debug_loclists
-                0x0001111e      0x25b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
+                0x0001111d      0x25b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
  .debug_loclists
-                0x00011379     0x119c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x00011378     0x119c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .debug_loclists
-                0x00012515       0x5c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+                0x00012514       0x5c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
 
 .debug_aranges  0x00000000     0x1a90
  .debug_aranges
@@ -4147,163 +4147,163 @@ LOAD linker stubs
                 0x00001a70       0x20 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
 
 .debug_rnglists
-                0x00000000     0x1a11
+                0x00000000     0x19f9
  .debug_rnglists
-                0x00000000      0x113 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+                0x00000000       0xfb CMakeFiles/audiopwm.dir/audiopwm.c.obj
  .debug_rnglists
-                0x00000113       0x5c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+                0x000000fb       0x5c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
  .debug_rnglists
-                0x0000016f       0xec CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x00000157       0xec CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
  .debug_rnglists
-                0x0000025b       0x19 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x00000243       0x19 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
  .debug_rnglists
-                0x00000274       0x31 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x0000025c       0x31 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
  .debug_rnglists
-                0x000002a5       0x3d CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x0000028d       0x3d CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .debug_rnglists
-                0x000002e2       0xf0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x000002ca       0xf0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .debug_rnglists
-                0x000003d2       0x13 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x000003ba       0x13 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
  .debug_rnglists
-                0x000003e5       0xcf CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x000003cd       0xcf CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
  .debug_rnglists
-                0x000004b4       0x1f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+                0x0000049c       0x1f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
  .debug_rnglists
-                0x000004d3      0x17a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x000004bb      0x17a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
  .debug_rnglists
-                0x0000064d       0x6a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x00000635       0x6a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .debug_rnglists
-                0x000006b7       0x8e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x0000069f       0x8e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .debug_rnglists
-                0x00000745       0x62 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x0000072d       0x62 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .debug_rnglists
-                0x000007a7       0x51 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x0000078f       0x51 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .debug_rnglists
-                0x000007f8       0x1a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x000007e0       0x1a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
  .debug_rnglists
-                0x00000812       0x3d CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x000007fa       0x3d CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .debug_rnglists
-                0x0000084f       0x1f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x00000837       0x1f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
  .debug_rnglists
-                0x0000086e       0x7a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x00000856       0x7a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .debug_rnglists
-                0x000008e8       0xc2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x000008d0       0xc2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .debug_rnglists
-                0x000009aa       0x49 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x00000992       0x49 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .debug_rnglists
-                0x000009f3       0x2b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x000009db       0x2b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
  .debug_rnglists
-                0x00000a1e       0x2c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x00000a06       0x2c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
  .debug_rnglists
-                0x00000a4a       0xed CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x00000a32       0xed CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
  .debug_rnglists
-                0x00000b37       0x21 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x00000b1f       0x21 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
  .debug_rnglists
-                0x00000b58       0x99 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x00000b40       0x99 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
  .debug_rnglists
-                0x00000bf1       0xdf CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x00000bd9       0xdf CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
  .debug_rnglists
-                0x00000cd0       0x20 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x00000cb8       0x20 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
  .debug_rnglists
-                0x00000cf0      0x104 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+                0x00000cd8      0x104 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
  .debug_rnglists
-                0x00000df4       0x38 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x00000ddc       0x38 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
  .debug_rnglists
-                0x00000e2c       0x25 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x00000e14       0x25 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
  .debug_rnglists
-                0x00000e51       0x1b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x00000e39       0x1b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
  .debug_rnglists
-                0x00000e6c      0x117 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x00000e54      0x117 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .debug_rnglists
-                0x00000f83       0x6e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x00000f6b       0x6e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .debug_rnglists
-                0x00000ff1       0x3d CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x00000fd9       0x3d CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .debug_rnglists
-                0x0000102e       0x83 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x00001016       0x83 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .debug_rnglists
-                0x000010b1       0x1f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x00001099       0x1f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .debug_rnglists
-                0x000010d0       0x2b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x000010b8       0x2b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .debug_rnglists
-                0x000010fb       0x46 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x000010e3       0x46 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .debug_rnglists
-                0x00001141      0x102 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x00001129      0x102 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .debug_rnglists
-                0x00001243       0x4f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x0000122b       0x4f CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
  .debug_rnglists
-                0x00001292      0x259 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x0000127a      0x259 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .debug_rnglists
-                0x000014eb       0x3e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x000014d3       0x3e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
  .debug_rnglists
-                0x00001529       0xc7 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x00001511       0xc7 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
  .debug_rnglists
-                0x000015f0       0xe0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x000015d8       0xe0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
  .debug_rnglists
-                0x000016d0      0x204 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x000016b8      0x204 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
  .debug_rnglists
-                0x000018d4       0x14 CMakeFiles/audiopwm.dir/filter.c.obj
+                0x000018bc       0x14 CMakeFiles/audiopwm.dir/filter.c.obj
  .debug_rnglists
-                0x000018e8       0x56 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
+                0x000018d0       0x56 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
  .debug_rnglists
-                0x0000193e       0xc0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x00001926       0xc0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .debug_rnglists
-                0x000019fe       0x13 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+                0x000019e6       0x13 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
 
-.debug_line     0x00000000    0x1999b
- .debug_line    0x00000000     0x13c0 CMakeFiles/audiopwm.dir/audiopwm.c.obj
- .debug_line    0x000013c0      0x43a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
- .debug_line    0x000017fa      0xb51 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_line    0x0000234b      0x1e2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
- .debug_line    0x0000252d      0x3b4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
- .debug_line    0x000028e1      0x3ba CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- .debug_line    0x00002c9b      0xeb3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- .debug_line    0x00003b4e      0x1a9 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
- .debug_line    0x00003cf7      0xf1a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .debug_line    0x00004c11      0x233 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .debug_line    0x00004e44     0x16d2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
- .debug_line    0x00006516      0xad8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .debug_line    0x00006fee      0x6b1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- .debug_line    0x0000769f      0x743 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
- .debug_line    0x00007de2      0x8fc CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_line    0x000086de      0x4a8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
- .debug_line    0x00008b86      0x3ad CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_line    0x00008f33      0x221 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_line    0x00009154      0x9ea CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_line    0x00009b3e     0x116e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .debug_line    0x0000acac      0x11a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_line    0x0000adc6      0x1e4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_line    0x0000afaa      0x2a9 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
- .debug_line    0x0000b253      0x3fa CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_line    0x0000b64d      0x2a0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_line    0x0000b8ed      0x66c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_line    0x0000bf59       0x61 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_line    0x0000bfba      0x3b2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_line    0x0000c36c      0x2a3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_line    0x0000c60f     0x1d44 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
- .debug_line    0x0000e353      0x198 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
- .debug_line    0x0000e4eb       0x94 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_line    0x0000e57f       0xa5 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_line    0x0000e624      0x148 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_line    0x0000e76c      0xe08 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_line    0x0000f574      0x8a4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .debug_line    0x0000fe18      0x3ee CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
- .debug_line    0x00010206      0xbd8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .debug_line    0x00010dde      0x284 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- .debug_line    0x00011062      0x2a7 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_line    0x00011309      0x7bc CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .debug_line    0x00011ac5      0xdb3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .debug_line    0x00012878      0x96e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- .debug_line    0x000131e6     0x1d7c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
- .debug_line    0x00014f62      0x431 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
- .debug_line    0x00015393      0xd0b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
- .debug_line    0x0001609e      0xb0a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
- .debug_line    0x00016ba8     0x1541 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
- .debug_line    0x000180e9      0x129 CMakeFiles/audiopwm.dir/filter.c.obj
- .debug_line    0x00018212      0x569 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
- .debug_line    0x0001877b      0xde4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
- .debug_line    0x0001955f      0x280 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
- .debug_line    0x000197df       0x4a /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .debug_line    0x00019829      0x172 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
+.debug_line     0x00000000    0x199b2
+ .debug_line    0x00000000     0x13d7 CMakeFiles/audiopwm.dir/audiopwm.c.obj
+ .debug_line    0x000013d7      0x43a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+ .debug_line    0x00001811      0xb51 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_line    0x00002362      0x1e2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .debug_line    0x00002544      0x3b4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_line    0x000028f8      0x3ba CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_line    0x00002cb2      0xeb3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_line    0x00003b65      0x1a9 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .debug_line    0x00003d0e      0xf1a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .debug_line    0x00004c28      0x233 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .debug_line    0x00004e5b     0x16d2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .debug_line    0x0000652d      0xad8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_line    0x00007005      0x6b1 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ .debug_line    0x000076b6      0x743 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+ .debug_line    0x00007df9      0x8fc CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_line    0x000086f5      0x4a8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_line    0x00008b9d      0x3ad CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_line    0x00008f4a      0x221 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_line    0x0000916b      0x9ea CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_line    0x00009b55     0x116e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .debug_line    0x0000acc3      0x11a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_line    0x0000addd      0x1e4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_line    0x0000afc1      0x2a9 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+ .debug_line    0x0000b26a      0x3fa CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_line    0x0000b664      0x2a0 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_line    0x0000b904      0x66c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_line    0x0000bf70       0x61 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_line    0x0000bfd1      0x3b2 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_line    0x0000c383      0x2a3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_line    0x0000c626     0x1d44 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+ .debug_line    0x0000e36a      0x198 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_line    0x0000e502       0x94 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_line    0x0000e596       0xa5 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_line    0x0000e63b      0x148 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_line    0x0000e783      0xe08 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_line    0x0000f58b      0x8a4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .debug_line    0x0000fe2f      0x3ee CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+ .debug_line    0x0001021d      0xbd8 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .debug_line    0x00010df5      0x284 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ .debug_line    0x00011079      0x2a7 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_line    0x00011320      0x7bc CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .debug_line    0x00011adc      0xdb3 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .debug_line    0x0001288f      0x96e CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .debug_line    0x000131fd     0x1d7c CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+ .debug_line    0x00014f79      0x431 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+ .debug_line    0x000153aa      0xd0b CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+ .debug_line    0x000160b5      0xb0a CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+ .debug_line    0x00016bbf     0x1541 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+ .debug_line    0x00018100      0x129 CMakeFiles/audiopwm.dir/filter.c.obj
+ .debug_line    0x00018229      0x569 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
+ .debug_line    0x00018792      0xde4 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+ .debug_line    0x00019576      0x280 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+ .debug_line    0x000197f6       0x4a /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x00019840      0x172 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
 
 .debug_str      0x00000000     0x89d1
  .debug_str     0x00000000      0xe7d CMakeFiles/audiopwm.dir/audiopwm.c.obj

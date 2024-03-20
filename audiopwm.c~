@@ -12,7 +12,7 @@
 #include "pico/stdlib.h"
 
 #define AUDIO_PIN 0
-#define AUDIO_BUFFER_LEN 256
+#define AUDIO_BUFFER_LEN 64
 #define AUDIO_BUFFER_NUM 3
 
 int dma_chan;
@@ -293,14 +293,14 @@ int main() {
     float vol_2 = 0.1;
     float vol_all = 0.3;
 
-    enum notes note_1 = A4;
-    enum notes note_2 = G4;
+    enum notes note_1 = E3;
+    enum notes note_2 = E4;
 
     bool waveform = true;
     start_oscillator(0, &saw_buffer, note_1, 0);
     start_oscillator(1, &saw_buffer, note_2, 0);
     start_oscillator(2, &saw_buffer, note_1, 0x4000);
-    start_oscillator(3, &saw_buffer, note_2, 0x2000);
+    start_oscillator(3, &saw_buffer, note_2, 0x8000);
 
 
 
@@ -314,19 +314,19 @@ int main() {
         //printf("%f\n", adc_value);
         volatile struct audiobuffer* buf = get_empty_buffer();
         buf->status = used;
+        for (uint i = 0; i < AUDIO_BUFFER_LEN; i++) {
 	float for_now = adc_value;
         vol_all = fabsf(for_now);
-        for (uint i = 0; i < AUDIO_BUFFER_LEN; i++) {
-	float vol = clamp_upper(sqrtf(vol_all)+0.07f, 0.48f);
-	float res = clamp(vol_all, 0.3f, 0.93f);
+	float vol = clamp_upper(sqrtf(vol_all), 0.2f);
+	float res = clamp(cbrtf(vol_all), 0.3f, 0.93f);
         if (for_now >  0){
-           vol_1 = vol;
+           vol_1 = 0.5 + vol;
+	   vol_2 = 0.5 - vol;
            set_filter(&fil, 600.0f, res, false);
-            //vol_1 = clamp_upper((adc_value * 2.0f) + 0.07, 0.48);
         }else if (for_now < 0){
-           vol_2 = vol;
+           vol_2 = 0.5 + vol;
+	   vol_1 = 0.5 - vol;
            set_filter(&fil, 600.0f, res,  false);
-            //vol_2 = clamp_upper((adc_value * -2.0f) + 0.1, 0.45);
         }
         set_filter(&fil2, 440.0f, cbrtf(vol_all), false);
 
@@ -334,7 +334,7 @@ int main() {
             // set_filter(&fil, 100.0f * (adc_value * 10.0f + 10.0f) + 200.0f + 200 * mul, 0.5f, false);
             float v = vol_all* (vol_1 * (0.7 * oscillate(0) + 0.3 * oscillate(2)) + vol_2 * (oscillate(1) * 0.7 + oscillate(3)*0.3));
             //buf->buffer[i] = to_audio(filter_audio(&fil2, v)) ;
-            buf->buffer[i] = to_audio(filter_audio(&fil, v) * 0.9 + filter_audio(&fil2, v) * 0.1);
+            buf->buffer[i] = to_audio(filter_audio(&fil, v) * 0.7 + filter_audio(&fil2, v) * 0.3);
         }
         buf->status = full;
     }
