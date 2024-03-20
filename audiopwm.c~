@@ -299,8 +299,8 @@ int main() {
     bool waveform = true;
     start_oscillator(0, &saw_buffer, note_1, 0);
     start_oscillator(1, &saw_buffer, note_2, 0);
-    start_oscillator(2, &saw_buffer, note_1, 0x10000);
-    start_oscillator(3, &saw_buffer, note_2, 0x8000);
+    start_oscillator(2, &saw_buffer, note_1, 0x4000);
+    start_oscillator(3, &saw_buffer, note_2, 0x2000);
 
 
 
