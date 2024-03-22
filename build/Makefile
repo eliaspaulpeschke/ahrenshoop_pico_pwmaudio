@@ -1172,6 +1172,30 @@ home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 .PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 
+home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.obj: home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj
+.PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.obj
+
+# target to build an object file
+home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj
+.PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj
+
+home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.i: home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.i
+.PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.i
+
+# target to preprocess a source file
+home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.i
+.PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.i
+
+home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.s: home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.s
+.PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.s
+
+# target to generate assembly for a file
+home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/audiopwm.dir/build.make CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.s
+.PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.s
+
 home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.obj: home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 .PHONY : home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.obj
 
@@ -1979,6 +2003,9 @@ help:
 	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.obj"
 	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.i"
 	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.s"
+	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.obj"
+	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.i"
+	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.s"
 	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.obj"
 	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.i"
 	@echo "... home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.s"

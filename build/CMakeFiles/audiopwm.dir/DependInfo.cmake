@@ -58,7 +58,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
   "LIB_PICO_UTIL=1"
   "PICO_BOARD=\"pico\""
   "PICO_BUILD=1"
-  "PICO_CMAKE_BUILD_TYPE=\"Debug\""
+  "PICO_CMAKE_BUILD_TYPE=\"Release\""
   "PICO_COPY_TO_RAM=0"
   "PICO_CXX_ENABLE_EXCEPTIONS=0"
   "PICO_NO_FLASH=0"
@@ -125,6 +125,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/include"
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/include"
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/include"
+  "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/include"
   )
 
 # The set of dependency files which are needed:
@@ -168,6 +169,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj.d"
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj.d"
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj.d"
+  "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj.d"
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj.d"
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj.d"
   "/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj" "gcc" "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj.d"

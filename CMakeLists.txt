@@ -74,6 +74,8 @@ target_link_libraries(audiopwm
         hardware_dma
         hardware_pio
         hardware_adc
+	hardware_rtc
+	hardware_watchdog
         )
 
 pico_add_extra_outputs(audiopwm)

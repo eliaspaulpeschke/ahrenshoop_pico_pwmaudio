@@ -137,6 +137,12 @@ CMakeFiles/audiopwm.dir/audiopwm.c.obj: /home/unheil/pico/audiopwm/audiopwm.c \
   /home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
   /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h \
   /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h \
+  /home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/include/hardware/rtc.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/rtc.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/rtc.h \
+  /home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/watchdog.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h \
   /home/unheil/pico/audiopwm/notes.h
 
 CMakeFiles/audiopwm.dir/filter.c.obj: /home/unheil/pico/audiopwm/filter.c \
@@ -1936,6 +1942,47 @@ CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pl
   /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
   /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h
 
+CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj: /home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c \
+  /home/unheil/pico/pico-sdk/src/common/pico_base/include/pico.h \
+  /home/unheil/pico/pico-sdk/src/common/pico_base/include/pico/types.h \
+  /home/unheil/pico/pico-sdk/src/common/pico_base/include/pico/assert.h \
+  /usr/lib/gcc/arm-none-eabi/12.2.1/include/stdbool.h \
+  /usr/include/newlib/assert.h \
+  /usr/include/newlib/_ansi.h \
+  /usr/include/newlib/newlib.h \
+  /usr/include/newlib/_newlib_version.h \
+  /usr/include/newlib/sys/config.h \
+  /usr/include/newlib/machine/ieeefp.h \
+  /usr/include/newlib/sys/features.h \
+  /usr/lib/gcc/arm-none-eabi/12.2.1/include/stdint.h \
+  /usr/lib/gcc/arm-none-eabi/12.2.1/include/stddef.h \
+  generated/pico_base/pico/version.h \
+  /home/unheil/pico/pico-sdk/src/common/pico_base/include/pico/config.h \
+  generated/pico_base/pico/config_autogen.h \
+  /home/unheil/pico/pico-sdk/src/boards/include/boards/pico.h \
+  /home/unheil/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+  /home/unheil/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
+  /usr/include/newlib/sys/cdefs.h \
+  /usr/include/newlib/machine/_default_types.h \
+  /home/unheil/pico/pico-sdk/src/common/pico_base/include/pico/types.h \
+  /home/unheil/pico/pico-sdk/src/common/pico_base/include/pico/error.h \
+  /home/unheil/pico/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
+  /home/unheil/pico/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
+  /home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/include/hardware/rtc.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/rtc.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/rtc.h \
+  /home/unheil/pico/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
+  /home/unheil/pico/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
+  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h
+
 CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: /home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c \
   /home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
   /home/unheil/pico/pico-sdk/src/common/pico_base/include/pico.h \
@@ -3219,6 +3266,8 @@ CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/
 
 /home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c:
 
+/home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c:
+
 /home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c:
 
 /home/unheil/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c:
@@ -3238,12 +3287,6 @@ CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/
 /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/vreg_and_chip_reset.h:
 
 /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pll.h:
-
-/home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h:
-
-/usr/include/newlib/machine/time.h:
-
-/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h:
 
 /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h:
 
@@ -3309,6 +3352,16 @@ CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/
 
 /home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_private.h:
 
+/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/hid/hid.h:
+
+/home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb.h:
+
+/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c:
+
+/home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c:
+
+/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c:
+
 /usr/include/newlib/machine/_types.h:
 
 /home/unheil/pico/pico-sdk/src/common/pico_sync/include/pico/sync.h:
@@ -3359,10 +3412,6 @@ CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/
 
 /home/unheil/pico/audiopwm/adsr.c:
 
-/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c:
-
-/home/unheil/pico/pico-sdk/src/common/pico_sync/include/pico/mutex.h:
-
 /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/psm.h:
 
 /home/unheil/pico/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h:
@@ -3394,8 +3443,6 @@ CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/
 /usr/include/newlib/_ansi.h:
 
 /home/unheil/pico/pico-sdk/src/common/pico_base/include/pico/types.h:
-
-/home/unheil/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c:
 
 /home/unheil/pico/pico-sdk/src/rp2_common/pico_double/double_math.c:
 
@@ -3455,6 +3502,8 @@ CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/
 
 /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h:
 
+/home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h:
+
 /usr/lib/gcc/arm-none-eabi/12.2.1/include/stddef.h:
 
 /home/unheil/pico/audiopwm/adsr.h:
@@ -3466,6 +3515,12 @@ CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/pico_unique_id/
 /usr/include/newlib/sys/lock.h:
 
 /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h:
+
+/home/unheil/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c:
+
+/home/unheil/pico/pico-sdk/src/common/pico_sync/include/pico/mutex.h:
+
+/home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/rtc.h:
 
 /home/unheil/pico/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h:
 
@@ -3557,6 +3612,10 @@ generated/pico_base/pico/version.h:
 
 /usr/include/newlib/machine/types.h:
 
+/usr/include/newlib/machine/time.h:
+
+/home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h:
+
 /home/unheil/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h:
 
 audio_pwm.pio.h:
@@ -3568,6 +3627,8 @@ audio_pwm.pio.h:
 /home/unheil/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c:
 
 /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h:
+
+/home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/include/hardware/rtc.h:
 
 /home/unheil/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c:
 
@@ -3582,6 +3643,14 @@ audio_pwm.pio.h:
 /home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c:
 
 /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h:
+
+/home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/rtc.h:
+
+/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/dcd.h:
+
+/usr/include/newlib/sys/cdefs.h:
+
+/home/unheil/pico/audiopwm/notes.h:
 
 /home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c:
 
@@ -3640,17 +3709,3 @@ audio_pwm.pio.h:
 /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h:
 
 /home/unheil/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c:
-
-/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c:
-
-/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/usbd.c:
-
-/usr/include/newlib/sys/cdefs.h:
-
-/home/unheil/pico/audiopwm/notes.h:
-
-/home/unheil/pico/pico-sdk/lib/tinyusb/src/device/dcd.h:
-
-/home/unheil/pico/pico-sdk/lib/tinyusb/src/tusb.h:
-
-/home/unheil/pico/pico-sdk/lib/tinyusb/src/class/hid/hid.h:

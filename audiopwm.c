@@ -7,6 +7,8 @@
 #include "hardware/dma.h"
 #include "hardware/irq.h"
 #include "hardware/pio.h"
+#include "hardware/rtc.h"
+#include "hardware/watchdog.h"
 #include "math.h"
 #include "notes.h"
 #include "pico/stdlib.h"
@@ -128,16 +130,7 @@ void adc_handler() {
     }
 }
 
-void init_adc() {
-    adc_init();
-    adc_gpio_init(26);
-    adc_select_input(0);
-    adc_fifo_setup(true, false, 1, false, false);
-    adc_irq_set_enabled(true);
-    adc_set_clkdiv(786);  // 384, 192
-    irq_set_exclusive_handler(ADC_IRQ_FIFO, adc_handler);
-    irq_set_enabled(ADC_IRQ_FIFO, true);
-    adc_run(true);
+void adc_make_baseline(){
     adc_baseline = 0.0f;
     float intermediate = 0.0f;
     float delta_intermediate = 0.0f;
@@ -149,25 +142,19 @@ void init_adc() {
     adc_count = 0;
 }
 
-void count_detection() {
-    static int old_count;
-    static int same;
-    if (adc_value > 0.0f) {
-        adc_count += (int)(adc_value * 150.0f);
-    } else if (adc_value < 0.0f) {
-        adc_count += (int)(adc_value * 150.0f);
-    } else {
-        adc_count = 0;
-    }
-    if (adc_count == old_count) {
-        same++;
-        if (same > 7) {
-            adc_count = 0;
-        }
-    } else {
-        old_count = adc_count;
-    }
+void init_adc() {
+    adc_init();
+    adc_gpio_init(26);
+    adc_select_input(0);
+    adc_fifo_setup(true, false, 1, false, false);
+    adc_irq_set_enabled(true);
+    adc_set_clkdiv(786);  // 384, 192
+    irq_set_exclusive_handler(ADC_IRQ_FIFO, adc_handler);
+    irq_set_enabled(ADC_IRQ_FIFO, true);
+    adc_run(true);
+    adc_make_baseline();
 }
+
 
 #define OSC_BUFFER_LEN 2048
 #define OSC_POS_MAX (0x10000 * OSC_BUFFER_LEN)
@@ -184,41 +171,6 @@ struct oscillator {
 static float sine_buffer[OSC_BUFFER_LEN];
 static float saw_buffer[OSC_BUFFER_LEN];
 static struct oscillator oscillators[OSC_NUM];
-
-#define ECHO_LEN 4096
-static float echobuffer[ECHO_LEN];
-static uint16_t echo_pos;
-static uint16_t echo_tap0;
-static uint16_t echo_tap1;
-static uint16_t echo_tap2;
-static uint16_t echo_tap3;
-
-void init_echo() {
-    for (int i = 0; i < ECHO_LEN; i++) {
-        echobuffer[i] = 0;
-    }
-    echo_pos = 0;
-    echo_tap0 = 1;
-    echo_tap1 = 2048;
-    echo_tap2 = 3500;
-    echo_tap3 = 3900;
-}
-
-float process_echo(float in, float wet, float feedback) {
-    float val = in * (1.0f - wet) + echobuffer[echo_tap3] * (wet * 0.3) + echobuffer[echo_tap0] * (wet * 0.2) + echobuffer[echo_tap2] * (wet * 0.3) + echobuffer[echo_tap1] * (wet * 0.2);
-    echobuffer[echo_pos] = val * feedback;
-    echo_tap0++;
-    echo_tap1++;
-    echo_tap2++;
-    echo_tap3++;
-    echo_pos++;
-    if (echo_pos >= ECHO_LEN) echo_pos -= ECHO_LEN;
-    if (echo_tap0 >= ECHO_LEN) echo_tap0 -= ECHO_LEN;
-    if (echo_tap1 >= ECHO_LEN) echo_tap1 -= ECHO_LEN;
-    if (echo_tap2 >= ECHO_LEN) echo_tap2 -= ECHO_LEN;
-    if (echo_tap3 >= ECHO_LEN) echo_tap3 -= ECHO_LEN;
-    return val;
-}
 
 void init_oscillators() {
     for (uint i = 0; i < OSC_BUFFER_LEN; i++) {
@@ -262,81 +214,89 @@ float clamp(float in, float lower, float upper) {
 int main() {
     stdio_init_all();
     set_sys_clock_khz(125000, true);
+    irq_set_enabled(DMA_IRQ_0, false);
+    irq_set_enabled(ADC_IRQ_FIFO, false);
     init_pio();
     init_audio_buffers();
     init_dma();
     dma_handler();
     init_adc();
     init_oscillators();
-    init_echo();
+    rtc_init();
+    datetime_t t = {
+            .year  = 2020,
+            .month = 1,
+            .day   = 1,
+            .dotw  = 0, // 0 is Sunday, so 5 is Friday
+            .hour  = 0,
+            .min   = 0,
+            .sec   = 0
+    };
+    rtc_set_datetime(&t);
+    sleep_us(128);
+    rtc_get_datetime(&t);
+    int8_t day_before = t.day; 
+    bool first_run = true;
+    bool stay_in = true;
+    uint8_t delay = 13;
+    uint8_t next_mins = 10;
+    printf("BOOTED\n");
+    while (1){
+	    printf("REINIT\n");
+	    adc_make_baseline();
+	    float vol_1 = 0.1;
+	    float vol_2 = 0.1;
+	    float vol_all = 0.3;
+	    enum notes note_1 = D4;
+	    enum notes note_2 = C4;
+	    bool waveform = true;
+	    start_oscillator(0, &saw_buffer, note_1, 0);
+	    start_oscillator(1, &saw_buffer, note_2, 0);
+	    start_oscillator(2, &saw_buffer, note_1, 0x4000);
+	    start_oscillator(3, &saw_buffer, note_2, 0x8000);
+	    struct filter fil;
+	    struct filter fil2;
+	    set_filter(&fil, 600.0f, 0.4f, true);
+	    set_filter(&fil2, 600.0f, 0.4f, true);
+            if (t.day > day_before){
+		    printf("rebooting!!\n");
+		    watchdog_reboot(0, 0, 0);
+	    }
+	    if (!first_run){
+		next_mins = (t.min + delay)%60;
+	    }
+            stay_in = true;
+	    printf("FINISHED INIT\n");
 
-    // start_oscillator(0, &sine_buffer, 5177344);
-    // start_oscillator(1, &saw_buffer, 3473408);
-    // start_oscillator(2, &saw_buffer, 4390912);
-
-
-    /*struct adsr envelope;
-    construct_adsr(&envelope, 0.001f,0.2f,0.8f,0.6f,0.5f);
-    struct adsr envelope1;
-    construct_adsr(&envelope1, 0.001f,0.2f,0.8f,0.6f,0.7f);
-    struct adsr envelope2;
-    construct_adsr(&envelope2, 0.6f,0.6f,0.1f,0.05f,0.3f);
-
-    enum notes chosen_notes[] = {Db5, Gb3, Bb4};
-    struct adsr envs[3];
-    for (int i = 0; i < 2; i++) {
-        construct_adsr(&envs[i], 0.05f, 0.02f, 0.2f, 0.1f, 1.0f, 0.0f);
-        restart_envelope(&envs[i]);
-        start_oscillator(i, &saw_buffer, chosen_notes[i]);
-    }*/
-    float vol_1 = 0.1;
-    float vol_2 = 0.1;
-    float vol_all = 0.3;
-
-    enum notes note_1 = Gb4;
-    enum notes note_2 = E4;
-
-    bool waveform = true;
-    start_oscillator(0, &saw_buffer, note_1, 0);
-    start_oscillator(1, &saw_buffer, note_2, 0);
-    start_oscillator(2, &saw_buffer, note_1, 0x4000);
-    start_oscillator(3, &saw_buffer, note_2, 0x8000);
-
-
-
-    struct filter fil;
-    struct filter fil2;
-
-    set_filter(&fil, 600.0f, 0.4f, true);
-    set_filter(&fil2, 600.0f, 0.4f, true);
-    while (1) {
-        //count_detection();
-        //printf("%f\n", adc_value);
-        volatile struct audiobuffer* buf = get_empty_buffer();
-        buf->status = used;
-        for (uint i = 0; i < AUDIO_BUFFER_LEN; i++) {
-	float for_now = adc_value;
-        vol_all = fabsf(for_now);
-	float vol = clamp_upper(sqrtf(vol_all), 0.2f);
-	float res = clamp(cbrtf(vol_all), 0.3f, 0.93f);
-        if (for_now >  0){
-           vol_1 = 0.5 + vol;
-	   vol_2 = 0.5 - vol;
-           set_filter(&fil, 600.0f, res, false);
-        }else if (for_now < 0){
-           vol_2 = 0.5 + vol;
-	   vol_1 = 0.5 - vol;
-           set_filter(&fil, 600.0f, res,  false);
-        }
-        set_filter(&fil2, 440.0f, cbrtf(vol_all), false);
-
-        vol_all = clamp(vol_all, 0.05, 0.95);
-            // set_filter(&fil, 100.0f * (adc_value * 10.0f + 10.0f) + 200.0f + 200 * mul, 0.5f, false);
-            float v = vol_all* (vol_1 * (0.7 * oscillate(0) + 0.3 * oscillate(2)) + vol_2 * (oscillate(1) * 0.7 + oscillate(3)*0.3));
-            //buf->buffer[i] = to_audio(filter_audio(&fil2, v)) ;
-            buf->buffer[i] = to_audio(filter_audio(&fil, v) * 0.7 + filter_audio(&fil2, v) * 0.3);
-        }
-        buf->status = full;
+	    while (stay_in == true) {
+		rtc_get_datetime(&t);
+                if (t.min == next_mins){
+		       stay_in = false;	
+		       first_run = false;
+		}
+		volatile struct audiobuffer* buf = get_empty_buffer();
+		buf->status = used;
+		for (uint i = 0; i < AUDIO_BUFFER_LEN; i++) {
+			float for_now = adc_value;
+			vol_all = fabsf(for_now);
+			float vol = clamp_upper(sqrtf(vol_all), 0.2f);
+			float res = clamp(cbrtf(vol_all), 0.3f, 0.84f);
+			if (for_now >  0){
+			   vol_1 = 0.5 + vol;
+			   vol_2 = 0.5 - vol;
+			   set_filter(&fil, 600.0f, res, false);
+			}else if (for_now < 0){
+			   vol_2 = 0.5 + vol;
+			   vol_1 = 0.5 - vol;
+			   set_filter(&fil, 600.0f, res,  false);
+			}
+			set_filter(&fil2, 1200.0f, cbrtf(vol_all), false);
+			vol_all = clamp(vol_all, 0.05, 0.95);
+		        float v = vol_all* (vol_1 * (0.7 * oscillate(0) + 0.3 * oscillate(2)) + vol_2 * (oscillate(1) * 0.7 + oscillate(3)*0.3));
+	                buf->buffer[i] = to_audio(filter_audio(&fil, v) * 0.7 + filter_audio(&fil2, v) * 0.3);
+		}
+		buf->status = full;
+	    }
     }
     return 0;
 }
