@@ -69,4 +69,10 @@ CMakeFiles/audiopwm.dir/audiopwm.c.obj: \
  /home/unheil/pico/pico-sdk/src/rp2_common/hardware_dma/include/hardware/dma.h \
  /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/dma.h \
  /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dma.h \
+ /home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/include/hardware/rtc.h \
+ /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/rtc.h \
+ /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/rtc.h \
+ /home/unheil/pico/pico-sdk/src/rp2_common/hardware_watchdog/include/hardware/watchdog.h \
+ /home/unheil/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/watchdog.h \
+ /home/unheil/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h \
  /home/unheil/pico/audiopwm/notes.h

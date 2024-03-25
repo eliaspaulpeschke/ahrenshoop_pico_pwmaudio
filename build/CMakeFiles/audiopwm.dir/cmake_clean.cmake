@@ -79,6 +79,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj.d"
   "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj"
   "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj.d"
+  "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj"
+  "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj.d"
   "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj"
   "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj.d"
   "CMakeFiles/audiopwm.dir/home/unheil/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj"
